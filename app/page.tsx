@@ -3,7 +3,11 @@ export default function Home() {
   return (
     <main className="grid h-screen place-items-center">
       <div>
-        <p className="font-mono text-2xl ...">WAGGLEBUM GAMES</p>
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="h-64 w-64 animate-bounce rounded-full border-4 border-white bg-white p-2 shadow-lg shadow-black"
+        />
       </div>
       <div>
         Coming soon!
