@@ -16,6 +16,18 @@
   }
 }
 
+@keyframes wiggle {
+  0%, 20% { transform: translateX(0); } /* Pause at the start */
+  30% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  70% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-wiggle {
+  animation: wiggle 1s ease-in-out infinite; 
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
