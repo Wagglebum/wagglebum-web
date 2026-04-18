@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Plugins — Wagglebum</title><link rel="stylesheet" href="_shared.css">
+<style>
+  .page-head{padding:56px 24px 24px;text-align:center}
+  .page-head h1{font-size:64px;font-weight:900;letter-spacing:-0.03em;margin-bottom:14px}
+  .page-head p{color:var(--fg-muted);max-width:560px;margin:0 auto;font-size:18px}
+  .engines{display:flex;gap:8px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .engines button{padding:8px 16px;border-radius:999px;background:var(--snow);border:1px solid var(--border);font-weight:600;font-size:13px;cursor:pointer}
+  .engines button.active{background:var(--ink);color:var(--snow);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:24px 0 40px}
+  .plugin{background:var(--snow);border:1px solid var(--border);border-radius:20px;padding:22px 24px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:12px;transition:transform 150ms,box-shadow 150ms;text-decoration:none;color:var(--ink)}
+  .plugin:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .plugin.featured{border:2px solid var(--ink);box-shadow:var(--shadow-pop)}
+  .plugin .icon{width:52px;height:52px;border-radius:14px;background:var(--bone);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px}
+  .plugin.featured .icon{background:var(--ink);color:var(--snow);border-color:var(--ink)}
+  .plugin h3{font-size:20px;font-weight:800}
+  .plugin p{color:var(--fg-muted);font-size:14px;flex:1}
+  .plugin .tags{display:flex;gap:6px;flex-wrap:wrap}
+  .plugin .foot{display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px dashed var(--border-strong)}
+  .plugin .price{font-weight:900;font-size:18px}
+  .plugin .price.free{color:var(--ok)}
+
+  .feat-band{background:var(--bone);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin:40px 24px 56px;max-width:1052px;margin-inline:auto}
+  .feat-band h3{font-size:18px;font-weight:800;margin-bottom:6px}
+  .feat-band p{color:var(--fg-muted);font-size:14px}
+</style></head><body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><img src="logo.png" width="34" height="34"><span class="wordmark">Wagglebum</span></a>
+  <div class="links"><a href="games.html">Games</a><a href="plugins.html" class="active">Plugins</a><a href="#">Services</a><a href="#">About</a><a href="#">Blog</a></div>
+  <div class="actions"><a href="#" class="btn btn-ghost btn-sm">Say hi</a><a href="#" class="btn btn-primary btn-sm">Download trial →</a></div>
+</nav>
+
+<section class="page-head container">
+  <span class="eyebrow">Plugins &amp; tools</span>
+  <h1>Ship on Tuesday.</h1>
+  <p>Drop-in plugins for Unity and Unreal. Built by people who ship games, tested in ours first. Buy once, own forever.</p>
+  <div class="engines">
+    <button class="active">All (6)</button>
+    <button>Unity (4)</button>
+    <button>Unreal (2)</button>
+    <button>Standalone (1)</button>
+    <button>Free (2)</button>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid">
+    <a href="wagsave.html" class="plugin featured">
+      <div class="icon">W</div>
+      <div class="tags"><span class="tag tag-blush">New · v2.0</span><span class="tag tag-neutral">Unity</span></div>
+      <h3>WagSave</h3>
+      <p>Save games without the boilerplate. Cloud sync, migrations, undo, encryption. The last save system you'll add.</p>
+      <div class="foot"><span class="price">$49</span><span style="font-weight:700">Learn more →</span></div>
+    </a>
+    <a href="#" class="plugin">
+      <div class="icon">C</div>
+      <div class="tags"><span class="tag tag-neutral">Unity</span><span class="tag tag-neutral">Unreal</span></div>
+      <h3>Crowd AI</h3>
+      <p>Flocks, queues, and pathfinding for crowds of 1,000+. Drop it in a scene and forget about it.</p>
+      <div class="foot"><span class="price">$79</span><span style="font-weight:700">Learn more →</span></div>
+    </a>
+    <a href="#" class="plugin">
+      <div class="icon">S</div>
+      <div class="tags"><span class="tag tag-neutral">Unreal</span></div>
+      <h3>SaveKit</h3>
+      <p>WagSave's bigger Unreal sibling. Same idea, different engine, fully native Blueprint support.</p>
+      <div class="foot"><span class="price">$59</span><span style="font-weight:700">Learn more →</span></div>
+    </a>
+    <a href="#" class="plugin">
+      <div class="icon">·</div>
+      <div class="tags"><span class="tag tag-neutral">Unity</span><span class="tag tag-neutral">Free</span></div>
+      <h3>SpriteBath</h3>
+      <p>Batch-clean and re-export sprite atlases in one drag. Integrates with your CI in one line.</p>
+      <div class="foot"><span class="price free">Free</span><span style="font-weight:700">Download →</span></div>
+    </a>
+    <a href="#" class="plugin">
+      <div class="icon">▾</div>
+      <div class="tags"><span class="tag tag-neutral">Unity</span></div>
+      <h3>Dropdown Pro</h3>
+      <p>Dropdowns that don't look like a 2012 survey. Themeable, accessible, fast.</p>
+      <div class="foot"><span class="price">$19</span><span style="font-weight:700">Learn more →</span></div>
+    </a>
+    <a href="#" class="plugin">
+      <div class="icon">⌘</div>
+      <div class="tags"><span class="tag tag-neutral">Standalone</span><span class="tag tag-neutral">Free</span></div>
+      <h3>Wagglebum SDK</h3>
+      <p>Little utilities we use every day, wrapped up and open-sourced. Bring your own engine.</p>
+      <div class="foot"><span class="price free">Free · MIT</span><span style="font-weight:700">GitHub →</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="feat-band">
+  <div><span class="eyebrow">Why us</span><h3 style="margin-top:6px">We ship games too.</h3><p>Every plugin is used in our own titles before we charge for it.</p></div>
+  <div><span class="eyebrow">Fair pricing</span><h3 style="margin-top:6px">Buy once. Own it.</h3><p>No subscriptions. Free major-version upgrades for 12 months.</p></div>
+  <div><span class="eyebrow">Real support</span><h3 style="margin-top:6px">Real humans reply.</h3><p>Open an issue on GitHub. A dog-adjacent human will answer within 48h.</p></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><img src="logo.png" width="42" height="42" style="filter:invert(1) hue-rotate(180deg)"><span style="font-weight:900;font-size:22px;text-transform:uppercase">Wagglebum</span></div><p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:320px">Indie games and the tools to build them.</p></div>
+    <div><h4>Games</h4><div class="footer-col-links"><a href="#">Hello, Good Dog</a><a href="#">Shuttle Run</a></div></div>
+    <div><h4>Plugins</h4><div class="footer-col-links"><a href="wagsave.html">WagSave</a><a href="#">Crowd AI</a><a href="#">SpriteBath</a></div></div>
+    <div><h4>Company</h4><div class="footer-col-links"><a href="#">About</a><a href="#">Blog</a><a href="#">Contact</a></div></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Wagglebum Studios</div><div>Boston, MA</div></div>
+</footer>
+</body></html>

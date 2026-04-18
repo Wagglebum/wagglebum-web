@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>WagSave — Wagglebum</title><link rel="stylesheet" href="_shared.css">
+<style>
+  .hero{padding:56px 24px 24px;max-width:1100px;margin:0 auto;text-align:center}
+  .hero-icon{width:84px;height:84px;margin:0 auto 20px;border-radius:22px;background:var(--ink);color:var(--snow);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:42px;box-shadow:var(--shadow-pop)}
+  .hero h1{font-size:72px;font-weight:900;letter-spacing:-0.03em;line-height:1;margin-bottom:16px}
+  .hero p.lede{font-size:20px;color:var(--fg-muted);max-width:580px;margin:0 auto 28px}
+  .hero-cta{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+
+  .price-strip{display:flex;justify-content:center;gap:32px;padding:20px 24px;margin:32px 0 56px;font-size:14px;font-weight:600;color:var(--fg-muted);flex-wrap:wrap}
+  .price-strip b{color:var(--ink);font-weight:800}
+
+  .demo{padding:24px;max-width:1100px;margin:0 auto 56px}
+  .demo-frame{background:var(--ink);border-radius:20px;padding:14px;box-shadow:var(--shadow-xl)}
+  .demo-inner{background:var(--paper);border-radius:10px;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:13px;color:var(--stone)}
+
+  .feats{padding:56px 24px;max-width:1100px;margin:0 auto}
+  .feats h2{font-size:40px;font-weight:900;letter-spacing:-0.025em;text-align:center;margin-bottom:8px}
+  .feats p.lede{text-align:center;color:var(--fg-muted);font-size:17px;max-width:480px;margin:0 auto 36px}
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:var(--snow);border:1px solid var(--border);border-radius:18px;padding:22px 24px;box-shadow:var(--shadow-xs)}
+  .feat-num{font-family:var(--font-mono);font-size:11px;color:var(--fg-subtle);font-weight:700}
+  .feat h3{font-size:18px;font-weight:800;margin:8px 0 6px}
+  .feat p{color:var(--fg-muted);font-size:14px;line-height:1.5}
+
+  .code-panel{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:56px 24px;max-width:1100px;margin:0 auto;align-items:center}
+  .code-panel h2{font-size:36px;font-weight:900;letter-spacing:-0.02em;margin-bottom:12px}
+  .code-panel p{color:var(--fg-muted);font-size:16px;line-height:1.6;margin-bottom:16px}
+  pre{background:var(--ink);color:var(--snow);padding:20px 22px;border-radius:16px;font-family:var(--font-mono);font-size:13px;line-height:1.6;overflow-x:auto;box-shadow:var(--shadow-md);margin:0}
+  .tok-kw{color:#f3d8d1}.tok-str{color:#b2d8b2}.tok-com{color:var(--stone)}
+
+  .compat{padding:40px 24px;max-width:1100px;margin:0 auto}
+  .compat-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px}
+  .compat-cell{background:var(--bone);border:1px solid var(--border);border-radius:14px;padding:16px 18px;text-align:center}
+  .compat-cell b{display:block;font-size:15px;font-weight:800;margin-bottom:4px}
+  .compat-cell span{color:var(--fg-muted);font-size:12px}
+
+  .pricing{padding:56px 24px;max-width:1100px;margin:0 auto}
+  .pricing h2{font-size:40px;font-weight:900;letter-spacing:-0.025em;text-align:center;margin-bottom:36px}
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .tier{background:var(--snow);border:1px solid var(--border);border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:14px}
+  .tier.featured{border:2px solid var(--ink);box-shadow:var(--shadow-pop)}
+  .tier h3{font-size:18px;font-weight:800}
+  .tier .price{font-size:48px;font-weight:900;letter-spacing:-0.02em}
+  .tier .price small{font-size:14px;color:var(--fg-muted);font-weight:500}
+  .tier ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+  .tier li{font-size:14px;color:var(--fg-muted);padding-left:22px;position:relative}
+  .tier li::before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:900}
+
+  .faq{padding:56px 24px;max-width:760px;margin:0 auto}
+  .faq h2{font-size:36px;font-weight:900;letter-spacing:-0.02em;text-align:center;margin-bottom:28px}
+  .q{background:var(--snow);border:1px solid var(--border);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+  .q b{display:block;font-weight:800;margin-bottom:6px;font-size:15px}
+  .q p{color:var(--fg-muted);font-size:14px;line-height:1.6}
+</style></head><body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><img src="logo.png" width="34" height="34"><span class="wordmark">Wagglebum</span></a>
+  <div class="links"><a href="games.html">Games</a><a href="plugins.html" class="active">Plugins</a><a href="#">Services</a><a href="#">About</a><a href="#">Blog</a></div>
+  <div class="actions"><a href="wagsave-support.html" class="btn btn-ghost btn-sm">Support</a><a href="#" class="btn btn-primary btn-sm">Buy — $49 →</a></div>
+</nav>
+
+<section class="hero">
+  <div class="hero-icon">W</div>
+  <span class="tag tag-blush">v2.0 · out today</span>
+  <h1>WagSave</h1>
+  <p class="lede">Save games without the boilerplate. Cloud sync, migrations, undo, and encryption — all in one drop-in Unity package.</p>
+  <div class="hero-cta">
+    <a href="#" class="btn btn-primary">Buy — $49 →</a>
+    <a href="#" class="btn btn-secondary">Try free for 14 days</a>
+    <a href="#" class="btn btn-ghost">Read docs</a>
+  </div>
+</section>
+
+<div class="price-strip">
+  <div><b>Unity 2022+</b> · 2023 · 6</div>
+  <div><b>One-time</b> · no subscription</div>
+  <div><b>12 months</b> of updates included</div>
+  <div><b>4.9 ★</b> · Asset Store (112)</div>
+</div>
+
+<section class="demo">
+  <div class="demo-frame"><div class="demo-inner">[ Screencast · WagSave inspector in Unity ]</div></div>
+</section>
+
+<section class="feats">
+  <span class="eyebrow" style="display:block;text-align:center">Features</span>
+  <h2>The last save system<br>you'll ever add.</h2>
+  <p class="lede">Everything the engine should ship with. Small surface, sharp teeth.</p>
+  <div class="feat-grid">
+    <div class="feat"><div class="feat-num">01</div><h3>Cloud sync</h3><p>Steam, Epic, GOG Galaxy, iCloud, Google Play — one API, no if/else soup.</p></div>
+    <div class="feat"><div class="feat-num">02</div><h3>Migrations</h3><p>Schema changes without tears. Write a migration function, ship next patch.</p></div>
+    <div class="feat"><div class="feat-num">03</div><h3>Undo / redo</h3><p>Built-in ring buffer. Three lines of code to wire into your editor or game.</p></div>
+    <div class="feat"><div class="feat-num">04</div><h3>Encryption</h3><p>Optional AES with per-save keys. Cheat-proofs your save files without slowing the editor.</p></div>
+    <div class="feat"><div class="feat-num">05</div><h3>Compression</h3><p>LZ4 by default, Brotli for publishing. Saves ~70% smaller than Unity's PlayerPrefs soup.</p></div>
+    <div class="feat"><div class="feat-num">06</div><h3>Inspector</h3><p>Browse, edit, and diff any save from the Unity inspector. Works with your team's git.</p></div>
+  </div>
+</section>
+
+<section class="code-panel">
+  <div>
+    <span class="eyebrow">Getting started</span>
+    <h2>Three lines. That's the whole API.</h2>
+    <p>Drop the package in, create a schema, call <code>WagSave.Save()</code>. That's it. Cloud sync is opt-in from the inspector.</p>
+    <a href="#" style="font-weight:800">Read the full docs →</a>
+  </div>
+<pre><span class="tok-com">// schema.cs</span>
+<span class="tok-kw">public class</span> Run : WagSaveData {
+  <span class="tok-kw">public int</span> level;
+  <span class="tok-kw">public float</span> timePlayed;
+  <span class="tok-kw">public</span> List&lt;Item&gt; inventory;
+}
+
+<span class="tok-com">// anywhere in your game:</span>
+WagSave.Save(<span class="tok-str">"run-1"</span>, myRun);
+<span class="tok-kw">var</span> loaded = WagSave.Load&lt;Run&gt;(<span class="tok-str">"run-1"</span>);</pre>
+</section>
+
+<section class="compat">
+  <div class="compat-row">
+    <div class="compat-cell"><b>Unity 6</b><span>Fully supported</span></div>
+    <div class="compat-cell"><b>Unity 2023</b><span>Fully supported</span></div>
+    <div class="compat-cell"><b>Unity 2022 LTS</b><span>Fully supported</span></div>
+    <div class="compat-cell"><b>Unity 2021 LTS</b><span>Legacy builds only</span></div>
+  </div>
+</section>
+
+<section class="pricing">
+  <span class="eyebrow" style="display:block;text-align:center">Pricing</span>
+  <h2>Buy once. Own it.</h2>
+  <div class="tiers">
+    <div class="tier">
+      <h3>Indie</h3>
+      <div class="price">$49<small> · one-time</small></div>
+      <p style="color:var(--fg-muted);font-size:14px">For solo devs and teams under 3.</p>
+      <ul><li>All features</li><li>12 months of updates</li><li>GitHub-issue support</li></ul>
+      <a href="#" class="btn btn-secondary" style="margin-top:auto">Buy Indie →</a>
+    </div>
+    <div class="tier featured">
+      <h3>Studio</h3>
+      <div class="price">$199<small> · one-time</small></div>
+      <p style="color:var(--fg-muted);font-size:14px">Teams of 3–20. Seat-free.</p>
+      <ul><li>Everything in Indie</li><li>Priority email support</li><li>Private Discord channel</li><li>24 months of updates</li></ul>
+      <a href="#" class="btn btn-primary" style="margin-top:auto">Buy Studio →</a>
+    </div>
+    <div class="tier">
+      <h3>Source</h3>
+      <div class="price">Talk<small> · to us</small></div>
+      <p style="color:var(--fg-muted);font-size:14px">Source access &amp; royalty-free distribution.</p>
+      <ul><li>Full source code</li><li>Internal forks OK</li><li>Custom SLA</li></ul>
+      <a href="#" class="btn btn-ghost" style="margin-top:auto;border:2px solid var(--ink)">Get in touch →</a>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Fair questions</h2>
+  <div class="q"><b>Is this really a one-time purchase?</b><p>Yes. We think subscriptions for dev tools are silly. Buy once, keep forever. Updates are free for 12 months; after that they're optional and cheap.</p></div>
+  <div class="q"><b>Does it work with my save system?</b><p>Probably. WagSave can import from PlayerPrefs, JsonUtility, Odin Serializer, and Easy Save. See the migration guide.</p></div>
+  <div class="q"><b>What's the refund policy?</b><p>14 days, no questions, no forms. Email us and we'll refund you within a business day.</p></div>
+  <div class="q"><b>Unreal?</b><p>See <a href="#">SaveKit</a>. Same idea, different engine, separate purchase.</p></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><img src="logo.png" width="42" height="42" style="filter:invert(1) hue-rotate(180deg)"><span style="font-weight:900;font-size:22px;text-transform:uppercase">Wagglebum</span></div><p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:320px">Indie games and the tools to build them.</p></div>
+    <div><h4>Plugins</h4><div class="footer-col-links"><a href="wagsave.html">WagSave</a><a href="#">Crowd AI</a><a href="#">SpriteBath</a></div></div>
+    <div><h4>WagSave</h4><div class="footer-col-links"><a href="#">Docs</a><a href="wagsave-support.html">Support</a><a href="#">Changelog</a></div></div>
+    <div><h4>Company</h4><div class="footer-col-links"><a href="#">About</a><a href="#">Blog</a><a href="#">Contact</a></div></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Wagglebum Studios</div><div>Boston, MA</div></div>
+</footer>
+</body></html>

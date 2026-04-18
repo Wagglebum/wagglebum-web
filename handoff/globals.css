@@ -1,3 +1,4 @@
+/* Replace `app/globals.css` with this file. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,12 +8,13 @@
 
 @layer base {
   html, body {
-    background: #faf7f2;
-    color: #141414;
+    background: #faf7f2;   /* paper */
+    color: #141414;        /* ink */
     font-family: 'Rubik', ui-rounded, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
   }
 
+  /* nice-default selection */
   ::selection {
     background: #141414;
     color: #ffffff;
@@ -23,6 +25,7 @@
   .text-balance { text-wrap: balance; }
   .text-pretty  { text-wrap: pretty; }
 
+  /* Mascot waggle — keep the existing animation name for the current logo */
   @keyframes wiggle {
     0%, 20% { transform: translateX(0); }
     30%     { transform: translateX(-5px); }

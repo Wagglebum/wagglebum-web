@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wagglebum — Indie games + tools</title>
+<link rel="stylesheet" href="_shared.css">
+<style>
+  .hero{padding:72px 24px 40px;text-align:center;position:relative}
+  .hero h1{font-size:clamp(56px,8vw,104px);font-weight:900;line-height:0.98;letter-spacing:-0.03em;margin:18px 0 24px;max-width:960px;margin-inline:auto;text-wrap:balance}
+  .hero p{font-size:20px;color:var(--fg-muted);max-width:620px;margin:0 auto 32px;text-wrap:pretty}
+  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .hero-mascot{margin:56px auto 0;display:block}
+  .section{padding:56px 24px}
+  .section h2{font-size:44px;font-weight:900;letter-spacing:-0.025em;margin-bottom:8px}
+  .section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:28px;gap:16px;flex-wrap:wrap}
+  .section-head p{color:var(--fg-muted);max-width:480px;margin-top:6px}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+
+  .tile{background:var(--snow);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:transform 200ms cubic-bezier(.22,1,.36,1),box-shadow 200ms}
+  .tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+  .tile-media{aspect-ratio:16/10;background:var(--bone);position:relative;display:flex;align-items:center;justify-content:center;color:var(--stone);font-family:var(--font-mono);font-size:11px}
+  .tile-media.dark{background:var(--ink-soft);color:var(--stone)}
+  .tile-body{padding:18px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .tile h3{font-size:20px;font-weight:800}
+  .tile p{color:var(--fg-muted);font-size:14px;flex:1}
+  .tile-foot{display:flex;justify-content:space-between;align-items:center;margin-top:4px}
+  .tile-link{font-weight:700;font-size:14px;text-decoration:none;color:var(--ink)}
+
+  .plugin-row{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--snow);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-xs);transition:box-shadow 150ms}
+  .plugin-row:hover{box-shadow:var(--shadow-sm)}
+  .plugin-icon{width:48px;height:48px;border-radius:14px;background:var(--bone);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;flex:0 0 auto}
+  .plugin-meta{flex:1;min-width:0}
+  .plugin-meta h3{font-size:17px;font-weight:800;margin-bottom:2px}
+  .plugin-meta p{color:var(--fg-muted);font-size:14px}
+  .plugin-row .tags{display:flex;gap:6px}
+
+  .cta-band{background:var(--ink);color:var(--snow);border-radius:28px;padding:56px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;position:relative;overflow:hidden;margin:56px 0}
+  .cta-band h2{font-size:40px;font-weight:900;letter-spacing:-0.02em;max-width:520px;color:var(--snow)}
+  .cta-band .mascot{position:absolute;right:-30px;bottom:-40px;opacity:.15;filter:invert(1) hue-rotate(180deg);width:260px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:16px}
+  .stat{text-align:left}
+  .stat .num{font-size:48px;font-weight:900;letter-spacing:-0.03em;line-height:1}
+  .stat .lbl{color:var(--fg-subtle);font-size:13px;font-weight:600;margin-top:4px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><img src="logo.png" width="34" height="34" alt=""><span class="wordmark">Wagglebum</span></a>
+  <div class="links">
+    <a href="games.html">Games</a>
+    <a href="plugins.html">Plugins</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Blog</a>
+  </div>
+  <div class="actions">
+    <a href="#" class="btn btn-ghost btn-sm">Say hi</a>
+    <a href="plugins.html" class="btn btn-primary btn-sm">Get a plugin →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="tag tag-blush"><span style="width:6px;height:6px;background:var(--blush-500);border-radius:999px"></span>New · WagSave v2.0</span>
+  <h1>Tiny studio.<br>Waggly tools.</h1>
+  <p>Wagglebum makes indie games and builds the plugins that help other studios ship theirs. One dog-shaped team, two kinds of work.</p>
+  <div class="hero-cta">
+    <a href="games.html" class="btn btn-primary">Play our games →</a>
+    <a href="plugins.html" class="btn btn-secondary">Browse plugins</a>
+  </div>
+  <img src="logo.png" class="hero-mascot" width="240" height="240" alt="">
+</section>
+
+<section class="section container">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Games</span>
+      <h2>Cozy, strange, small.</h2>
+      <p>The games we make ourselves. Short, warm, built for an evening on the couch.</p>
+    </div>
+    <a href="games.html" class="btn btn-ghost">All games →</a>
+  </div>
+  <div class="grid-3">
+    <a href="game-hello-good-dog.html" class="tile" style="text-decoration:none">
+      <div class="tile-media">[ Hello, Good Dog — key art ]</div>
+      <div class="tile-body">
+        <span class="eyebrow">Out now · Steam / itch.io</span>
+        <h3>Hello, Good Dog</h3>
+        <p>A cozy puzzler about walking a very good dog through a very small town.</p>
+        <div class="tile-foot"><span class="tag tag-neutral">Cozy</span><span class="tile-link">Play →</span></div>
+      </div>
+    </a>
+    <a href="#" class="tile" style="text-decoration:none">
+      <div class="tile-media dark">[ Shuttle Run — key art ]</div>
+      <div class="tile-body">
+        <span class="eyebrow">In development</span>
+        <h3>Shuttle Run</h3>
+        <p>Two-button arcade about very fast dogs and very bad pilots.</p>
+        <div class="tile-foot"><span class="tag tag-neutral">Arcade</span><span class="tile-link">Wishlist →</span></div>
+      </div>
+    </a>
+    <a href="#" class="tile" style="text-decoration:none">
+      <div class="tile-media">[ Sweepers — key art ]</div>
+      <div class="tile-body">
+        <span class="eyebrow">Prototype</span>
+        <h3>Sweepers</h3>
+        <p>A chill sweeping sim. No enemies. No upgrades. Just sweeping.</p>
+        <div class="tile-foot"><span class="tag tag-neutral">Cozy</span><span class="tile-link">Read dev log →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="section container" style="padding-top:24px">
+  <div class="section-head">
+    <div>
+      <span class="eyebrow">Tools for devs</span>
+      <h2>Plugins that work on Tuesday.</h2>
+      <p>Drop-in Unity &amp; Unreal plugins, built by people who ship games. Buy once, own forever.</p>
+    </div>
+    <a href="plugins.html" class="btn btn-ghost">All plugins →</a>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <a href="wagsave.html" class="plugin-row" style="text-decoration:none">
+      <div class="plugin-icon">W</div>
+      <div class="plugin-meta"><h3>WagSave</h3><p>Save games without the boilerplate. Cloud sync, migrations, undo.</p></div>
+      <div class="tags"><span class="tag tag-neutral">Unity</span><span class="tag tag-blush">v2.0</span></div>
+      <span style="font-weight:700">→</span>
+    </a>
+    <a href="#" class="plugin-row" style="text-decoration:none">
+      <div class="plugin-icon">C</div>
+      <div class="plugin-meta"><h3>Crowd AI</h3><p>Flocks, queues, pathfinding. Drop it in and forget it.</p></div>
+      <div class="tags"><span class="tag tag-neutral">Unity</span><span class="tag tag-neutral">Unreal</span></div>
+      <span style="font-weight:700">→</span>
+    </a>
+    <a href="#" class="plugin-row" style="text-decoration:none">
+      <div class="plugin-icon">S</div>
+      <div class="plugin-meta"><h3>SpriteBath</h3><p>Batch-clean and re-export sprite atlases with one drag.</p></div>
+      <div class="tags"><span class="tag tag-neutral">Free</span></div>
+      <span style="font-weight:700">→</span>
+    </a>
+  </div>
+</section>
+
+<section class="container">
+  <div class="cta-band">
+    <div>
+      <span class="eyebrow" style="color:var(--mist)">Services</span>
+      <h2 style="margin-top:6px">Need a port? We've done a few.</h2>
+      <p style="color:var(--mist);margin-top:10px;max-width:420px">Switch, Steam Deck, iOS, web — we take your Unity game to the platforms it deserves.</p>
+      <a href="#" class="btn btn-secondary" style="margin-top:20px;background:var(--snow)">Book a call →</a>
+    </div>
+    <img src="logo.png" class="mascot" alt="">
+  </div>
+</section>
+
+<section class="section container" style="padding-top:0">
+  <div class="stats">
+    <div class="stat"><div class="num">12k+</div><div class="lbl">Devs using our plugins</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">Games shipped</div></div>
+    <div class="stat"><div class="num">6</div><div class="lbl">Plugins in the wild</div></div>
+    <div class="stat"><div class="num">1</div><div class="lbl">Very good dog</div></div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+        <img src="logo.png" width="42" height="42" style="filter:invert(1) hue-rotate(180deg)">
+        <span style="font-weight:900;font-size:22px;text-transform:uppercase;letter-spacing:-0.01em">Wagglebum</span>
+      </div>
+      <p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:320px">Indie games and the tools to build them. A tiny studio, a waggly logo.</p>
+    </div>
+    <div><h4>Games</h4><div class="footer-col-links"><a href="#">Hello, Good Dog</a><a href="#">Shuttle Run</a><a href="#">Sweepers</a><a href="#">All games →</a></div></div>
+    <div><h4>Plugins</h4><div class="footer-col-links"><a href="#">WagSave</a><a href="#">Crowd AI</a><a href="#">SaveKit</a><a href="#">SpriteBath</a></div></div>
+    <div><h4>Company</h4><div class="footer-col-links"><a href="#">About</a><a href="#">Blog</a><a href="#">Press kit</a><a href="#">Contact</a></div></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Wagglebum Studios — made with a waggle</div><div>Boston, MA</div></div>
+</footer>
+
+</body></html>

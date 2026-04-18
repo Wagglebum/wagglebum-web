@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Wagglebum — Website Handoff</title>
+  <link rel="stylesheet" href="reference/_shared.css">
+  <style>
+    body { background: var(--paper); padding: 48px 24px 80px; }
+    .wrap { max-width: 960px; margin: 0 auto; }
+    .hero { display: flex; align-items: center; gap: 24px; margin-bottom: 40px; }
+    .hero img { width: 96px; height: 96px; }
+    .hero h1 { font-size: 44px; font-weight: 900; letter-spacing: -0.025em; margin: 0 0 4px; }
+    .hero .sub { color: var(--fg-muted); font-size: 17px; }
+    .card { background: var(--snow); border: 1px solid var(--border); border-radius: 20px; padding: 22px 24px; box-shadow: var(--shadow-sm); margin-bottom: 16px; }
+    .card.chunky { border: 2px solid var(--ink); box-shadow: var(--shadow-pop); }
+    h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.015em; margin: 0 0 12px; }
+    h3 { font-size: 17px; font-weight: 800; margin: 0 0 4px; }
+    p { margin: 0; color: var(--fg-muted); font-size: 15px; line-height: 1.55; }
+    ul.files { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    ul.files li { display: flex; align-items: center; gap: 10px; font-size: 14px; padding: 10px 14px; background: var(--bone); border-radius: 12px; }
+    ul.files code { font-family: var(--font-mono); font-size: 13px; font-weight: 600; color: var(--ink); }
+    ul.pages { list-style: none; padding: 0; margin: 0; }
+    ul.pages li { display: grid; grid-template-columns: 1fr 1.4fr auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--border-strong); }
+    ul.pages li:last-child { border-bottom: 0; }
+    ul.pages code { font-family: var(--font-mono); font-size: 13px; color: var(--ink); }
+    ul.pages a { font-size: 13px; font-weight: 700; color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .cta { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: var(--snow); padding: 12px 22px; border-radius: 999px; font-weight: 800; font-size: 15px; text-decoration: none; border: 2px solid var(--ink); box-shadow: 0 4px 0 var(--ink); }
+    .eyebrow { font-size: 11px; font-weight: 800; color: var(--stone); text-transform: uppercase; letter-spacing: 0.06em; }
+    section { margin-bottom: 32px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <img src="reference/logo.png" alt="">
+      <div>
+        <div class="eyebrow">Claude Code Handoff</div>
+        <h1>Wagglebum Website</h1>
+        <div class="sub">A pixel-ready handoff package: design brief, tokens, components, and reference mocks for every page.</div>
+      </div>
+    </div>
+
+    <section>
+      <div class="card chunky">
+        <div class="eyebrow">Start here</div>
+        <h2 style="margin-top:4px">Read <code style="font-family:var(--font-mono);font-size:19px">HANDOFF.md</code>, then build against <code style="font-family:var(--font-mono);font-size:19px">reference/</code>.</h2>
+        <p style="margin-top:8px">The reference HTMLs are the target — Claude Code should match them pixel-for-pixel using the provided Tailwind tokens and React components.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>What's in the package</h2>
+      <div class="card">
+        <ul class="files">
+          <li>📄 <code>HANDOFF.md</code></li>
+          <li>📄 <code>CLAUDE_CODE_PROMPT.md</code></li>
+          <li>📄 <code>DESIGN_BRIEF.md</code></li>
+          <li>🎨 <code>globals.css</code></li>
+          <li>🎨 <code>tailwind-tokens.js</code></li>
+          <li>⚛️ <code>components.tsx</code></li>
+          <li>🖼️ <code>reference/</code> (mocks)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reference mocks</h2>
+      <div class="card">
+        <ul class="pages">
+          <li><code>/</code><span>Home — hero + games + plugins + studio pitch</span><a href="reference/index.html">View mock →</a></li>
+          <li><code>/games</code><span>Games listing grid</span><a href="reference/games.html">View mock →</a></li>
+          <li><code>/games/hello-good-dog</code><span>Single-game marketing page</span><a href="reference/game-hello-good-dog.html">View mock →</a></li>
+          <li><code>/plugins</code><span>Plugins listing</span><a href="reference/plugins.html">View mock →</a></li>
+          <li><code>/plugins/wagsave</code><span>Single-plugin product page</span><a href="reference/wagsave.html">View mock →</a></li>
+          <li><code>/plugins/wagsave/support</code><span>Support center with sidebar + article</span><a href="reference/wagsave-support.html">View mock →</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Open the docs</h2>
+      <div style="display:flex; gap:12px; flex-wrap:wrap">
+        <a class="cta" href="HANDOFF.md">Open HANDOFF.md →</a>
+        <a class="cta" href="DESIGN_BRIEF.md" style="background:var(--snow);color:var(--ink)">Open DESIGN_BRIEF.md →</a>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

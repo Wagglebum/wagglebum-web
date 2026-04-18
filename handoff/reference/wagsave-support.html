@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>WagSave — Support</title><link rel="stylesheet" href="_shared.css">
+<style>
+  .sub-nav{background:var(--bone);border-bottom:1px solid var(--border);padding:12px 24px}
+  .sub-nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .sub-nav-inner .crumb{color:var(--fg-subtle);font-size:13px;font-weight:600}
+  .sub-nav-inner .crumb a{color:var(--fg-subtle)}
+  .sub-nav-inner .trail-sep{opacity:.5}
+  .sub-tabs{margin-left:auto;display:flex;gap:4px}
+  .sub-tabs a{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;color:var(--fg-muted)}
+  .sub-tabs a.active{background:var(--ink);color:var(--snow)}
+
+  .hero{padding:40px 24px 16px;max-width:1100px;margin:0 auto}
+  .hero h1{font-size:48px;font-weight:900;letter-spacing:-0.025em;margin-bottom:10px}
+  .hero p{color:var(--fg-muted);font-size:17px;max-width:560px}
+  .search-box{display:flex;align-items:center;gap:10px;background:var(--snow);border:2px solid var(--ink);border-radius:999px;padding:12px 20px;max-width:520px;margin-top:20px;box-shadow:var(--shadow-pop)}
+  .search-box input{flex:1;border:0;outline:0;background:transparent;font-family:var(--font-body);font-size:15px}
+
+  .layout{display:grid;grid-template-columns:260px 1fr 260px;gap:28px;padding:32px 24px 72px;max-width:1100px;margin:0 auto;align-items:start}
+  .side{position:sticky;top:24px}
+  .side h4{font-size:11px;font-weight:800;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;padding:0 10px}
+  .side nav{display:flex;flex-direction:column;gap:2px}
+  .side a{display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:10px;color:var(--fg);text-decoration:none;font-size:14px;font-weight:500}
+  .side a.active{background:var(--ink);color:var(--snow);font-weight:700}
+  .side a:hover:not(.active){background:var(--bone)}
+  .side a .chev{margin-left:auto;opacity:.4}
+
+  article{background:var(--snow);border:1px solid var(--border);border-radius:20px;padding:32px 36px;box-shadow:var(--shadow-sm)}
+  article .meta{display:flex;gap:10px;margin-bottom:16px;color:var(--fg-subtle);font-size:12px;font-weight:600}
+  article h1{font-size:36px;font-weight:900;letter-spacing:-0.02em;margin-bottom:12px}
+  article h2{font-size:22px;font-weight:800;margin:28px 0 10px;letter-spacing:-0.01em}
+  article p{font-size:16px;color:var(--fg-muted);line-height:1.7;margin-bottom:14px}
+  article code{background:var(--bone);padding:1px 6px;border-radius:6px;font-family:var(--font-mono);font-size:13px;color:var(--ink)}
+  article pre{background:var(--ink);color:var(--snow);padding:18px 22px;border-radius:14px;font-family:var(--font-mono);font-size:13px;line-height:1.6;overflow-x:auto;margin:16px 0}
+  article pre .tok-kw{color:#f3d8d1}.tok-str{color:#b2d8b2}.tok-com{color:var(--stone)}
+  article ol,article ul{color:var(--fg-muted);font-size:16px;line-height:1.7;padding-left:22px;margin-bottom:14px}
+  article li{margin-bottom:6px}
+  article .callout{background:var(--blush-50);border-left:3px solid var(--blush-500);padding:14px 18px;border-radius:10px;margin:18px 0;color:var(--blush-700);font-size:14px;font-weight:500}
+
+  .toc{font-size:13px}
+  .toc a{display:block;padding:5px 10px;border-radius:8px;color:var(--fg-muted);text-decoration:none}
+  .toc a:hover{color:var(--ink)}
+  .toc a.active{color:var(--ink);background:var(--bone);font-weight:700}
+
+  .helpful{margin-top:32px;padding:20px 24px;background:var(--bone);border-radius:14px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .helpful b{font-weight:800;margin-right:6px}
+  .yn{display:flex;gap:6px;margin-left:auto}
+  .yn button{background:var(--snow);border:1px solid var(--border-strong);border-radius:999px;padding:6px 16px;font-weight:700;font-size:13px;cursor:pointer}
+
+  .contact{background:var(--ink);color:var(--snow);border-radius:16px;padding:22px;margin-top:14px}
+  .contact b{display:block;font-size:15px;font-weight:800;margin-bottom:6px}
+  .contact p{color:var(--mist);font-size:13px;line-height:1.5;margin-bottom:10px}
+</style></head><body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><img src="logo.png" width="34" height="34"><span class="wordmark">Wagglebum</span></a>
+  <div class="links"><a href="games.html">Games</a><a href="plugins.html" class="active">Plugins</a><a href="#">Services</a><a href="#">About</a><a href="#">Blog</a></div>
+  <div class="actions"><a href="#" class="btn btn-ghost btn-sm">Sign in</a><a href="wagsave.html" class="btn btn-primary btn-sm">Back to WagSave →</a></div>
+</nav>
+
+<div class="sub-nav">
+  <div class="sub-nav-inner">
+    <span class="crumb"><a href="plugins.html">Plugins</a> <span class="trail-sep">/</span> <a href="wagsave.html">WagSave</a> <span class="trail-sep">/</span> <b style="color:var(--ink)">Support</b></span>
+    <div class="sub-tabs">
+      <a href="wagsave.html">Overview</a>
+      <a href="#">Docs</a>
+      <a href="#">Changelog</a>
+      <a href="wagsave-support.html" class="active">Support</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <span class="eyebrow">WagSave support</span>
+  <h1>We'll help you get saved.</h1>
+  <p>Real humans answer within 48h. In the meantime, here are the answers to the 20 questions we get most.</p>
+  <div class="search-box">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+    <input placeholder="Search 124 articles — try 'cloud sync'">
+  </div>
+</section>
+
+<div class="layout">
+  <aside class="side">
+    <h4>Topics</h4>
+    <nav>
+      <a href="#" class="active">Installation<span class="chev">›</span></a>
+      <a href="#">Cloud sync<span class="chev">›</span></a>
+      <a href="#">Migrations<span class="chev">›</span></a>
+      <a href="#">Encryption<span class="chev">›</span></a>
+      <a href="#">Platforms<span class="chev">›</span></a>
+      <a href="#">Troubleshooting<span class="chev">›</span></a>
+      <a href="#">Licensing<span class="chev">›</span></a>
+      <a href="#">API reference<span class="chev">›</span></a>
+    </nav>
+
+    <div class="contact">
+      <b>Still stuck?</b>
+      <p>Email us with your project version and WagSave version. We reply within 48 hours.</p>
+      <a href="#" class="btn btn-secondary btn-sm" style="background:var(--snow)">Open a ticket →</a>
+    </div>
+  </aside>
+
+  <article>
+    <div class="meta">
+      <span>Installation</span> · <span>Updated Mar 2026</span> · <span>5 min read</span>
+    </div>
+    <h1>Installing WagSave in 60 seconds</h1>
+    <p>WagSave ships as a single <code>.unitypackage</code> and as a package via Unity's package manager. Pick whichever matches how you manage dependencies — both ship identical code.</p>
+
+    <h2>Option 1 · Asset Store (recommended)</h2>
+    <ol>
+      <li>Buy WagSave from the <a href="#">Unity Asset Store</a>.</li>
+      <li>Open <b>Window → Package Manager</b> in Unity.</li>
+      <li>Switch the dropdown to <b>My Assets</b> and click <b>Download</b>, then <b>Import</b>.</li>
+      <li>When prompted, import the whole package. You can remove the <code>Samples/</code> folder later if you don't need it.</li>
+    </ol>
+
+    <div class="callout">💡 Already have PlayerPrefs or JsonUtility saves in your project? WagSave can import them. See <a href="#" style="color:var(--blush-700);font-weight:800">Migrating existing saves</a>.</div>
+
+    <h2>Option 2 · Git URL (for teams)</h2>
+    <p>If you use Unity's package manager with git URLs, add this line to your <code>manifest.json</code>:</p>
+<pre><span class="tok-com">// Packages/manifest.json</span>
+{
+  <span class="tok-str">"dependencies"</span>: {
+    <span class="tok-str">"dev.wagglebum.wagsave"</span>: <span class="tok-str">"https://git.wagglebum.dev/wagsave.git#v2.0"</span>
+  }
+}</pre>
+
+    <h2>Option 3 · OpenUPM</h2>
+    <p>Run this at the root of your Unity project:</p>
+    <pre>openupm add dev.wagglebum.wagsave</pre>
+
+    <h2>Verify it's working</h2>
+    <p>Create a new MonoBehaviour and paste the following. If it prints <code>saved!</code> in the console, you're good to go.</p>
+<pre><span class="tok-kw">using</span> Wagglebum.WagSave;
+
+<span class="tok-kw">void</span> Start() {
+  WagSave.Save(<span class="tok-str">"test"</span>, <span class="tok-kw">new</span> { hello = <span class="tok-str">"world"</span> });
+  Debug.Log(<span class="tok-str">"saved!"</span>);
+}</pre>
+
+    <div class="helpful">
+      <b>Was this helpful?</b><span style="color:var(--fg-muted);font-size:14px">118 of 124 people said yes.</span>
+      <div class="yn"><button>Yes</button><button>No</button></div>
+    </div>
+  </article>
+
+  <aside class="side">
+    <h4>On this page</h4>
+    <div class="toc">
+      <a href="#">Introduction</a>
+      <a href="#" class="active">Option 1 · Asset Store</a>
+      <a href="#">Option 2 · Git URL</a>
+      <a href="#">Option 3 · OpenUPM</a>
+      <a href="#">Verify it's working</a>
+    </div>
+  </aside>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><img src="logo.png" width="42" height="42" style="filter:invert(1) hue-rotate(180deg)"><span style="font-weight:900;font-size:22px;text-transform:uppercase">Wagglebum</span></div><p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:320px">Indie games and the tools to build them.</p></div>
+    <div><h4>Plugins</h4><div class="footer-col-links"><a href="wagsave.html">WagSave</a><a href="#">Crowd AI</a></div></div>
+    <div><h4>WagSave</h4><div class="footer-col-links"><a href="#">Docs</a><a href="wagsave-support.html">Support</a><a href="#">Changelog</a></div></div>
+    <div><h4>Company</h4><div class="footer-col-links"><a href="#">About</a><a href="#">Blog</a></div></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Wagglebum Studios</div><div>Boston, MA</div></div>
+</footer>
+</body></html>

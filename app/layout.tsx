@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Wagglebum Games",
-  description: "Welcome to the Wagglebum Games website!",
+  title: "Wagglebum — Indie games + tools",
+  description: "Wagglebum makes indie games and builds the plugins that help other studios ship theirs.",
 };
 
 export default function RootLayout({
@@ -16,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-paper font-sans">{children}</body>
     </html>
   );
 }

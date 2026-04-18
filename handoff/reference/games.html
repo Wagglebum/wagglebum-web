@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Games — Wagglebum</title><link rel="stylesheet" href="_shared.css">
+<style>
+  .page-head{padding:56px 24px 24px;text-align:center}
+  .page-head h1{font-size:64px;font-weight:900;letter-spacing:-0.03em;margin-bottom:14px}
+  .page-head p{color:var(--fg-muted);max-width:560px;margin:0 auto;font-size:18px}
+  .filters{display:flex;gap:8px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+  .filter{padding:8px 16px;border-radius:999px;background:var(--snow);border:1px solid var(--border);font-weight:600;font-size:13px;cursor:pointer}
+  .filter.active{background:var(--ink);color:var(--snow);border-color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;padding:24px 0 56px}
+  .game{background:var(--snow);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .game.featured{border:2px solid var(--ink);box-shadow:var(--shadow-pop)}
+  .game-media{aspect-ratio:16/9;background:var(--bone);display:flex;align-items:center;justify-content:center;font-family:var(--font-mono);font-size:12px;color:var(--stone);position:relative}
+  .game-media.dark{background:var(--ink-soft);color:var(--mist)}
+  .game-body{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+  .game h2{font-size:26px;font-weight:900;letter-spacing:-0.015em}
+  .game p{color:var(--fg-muted);font-size:15px}
+  .game-tags{display:flex;gap:6px;flex-wrap:wrap}
+  .game-foot{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+  .platforms{display:flex;gap:10px;color:var(--fg-subtle);font-size:13px;font-weight:600}
+</style></head><body>
+
+<nav class="nav">
+  <a href="index.html" class="logo"><img src="logo.png" width="34" height="34"><span class="wordmark">Wagglebum</span></a>
+  <div class="links"><a href="games.html" class="active">Games</a><a href="plugins.html">Plugins</a><a href="#">Services</a><a href="#">About</a><a href="#">Blog</a></div>
+  <div class="actions"><a href="#" class="btn btn-ghost btn-sm">Say hi</a><a href="plugins.html" class="btn btn-primary btn-sm">Get a plugin →</a></div>
+</nav>
+
+<section class="page-head container">
+  <span class="eyebrow">Our games</span>
+  <h1>Small games, <br>made with care.</h1>
+  <p>Short, warm, easy to finish in an evening. All made by the same tiny studio.</p>
+  <div class="filters">
+    <button class="filter active">All (6)</button>
+    <button class="filter">Out now (3)</button>
+    <button class="filter">Coming soon (2)</button>
+    <button class="filter">Prototypes (1)</button>
+  </div>
+</section>
+
+<section class="container">
+  <div class="grid">
+    <a href="game-hello-good-dog.html" class="game featured" style="text-decoration:none">
+      <div class="game-media">[ Hello, Good Dog — key art ]</div>
+      <div class="game-body">
+        <div class="game-tags"><span class="tag tag-blush">Featured</span><span class="tag tag-neutral">Cozy</span><span class="tag tag-neutral">Puzzle</span></div>
+        <h2>Hello, Good Dog</h2>
+        <p>A cozy puzzler about walking a very good dog through a very small town. 2–4 hours, no tutorials, just vibes.</p>
+        <div class="game-foot"><div class="platforms">Steam · itch.io · Switch</div><span style="font-weight:800">$14.99 →</span></div>
+      </div>
+    </a>
+    <a href="#" class="game" style="text-decoration:none">
+      <div class="game-media dark">[ Shuttle Run — key art ]</div>
+      <div class="game-body">
+        <div class="game-tags"><span class="tag tag-neutral">Arcade</span><span class="tag tag-neutral">2-button</span></div>
+        <h2>Shuttle Run</h2>
+        <p>Two-button arcade about very fast dogs and very bad pilots. 2026.</p>
+        <div class="game-foot"><div class="platforms">Steam · Switch · Mobile</div><span style="font-weight:800">Wishlist →</span></div>
+      </div>
+    </a>
+    <a href="#" class="game" style="text-decoration:none">
+      <div class="game-media">[ Sweepers — key art ]</div>
+      <div class="game-body">
+        <div class="game-tags"><span class="tag tag-neutral">Cozy sim</span></div>
+        <h2>Sweepers</h2>
+        <p>Chill sweeping sim. No enemies. No upgrades. Just sweeping.</p>
+        <div class="game-foot"><div class="platforms">PC · Mac</div><span style="font-weight:800">Dev log →</span></div>
+      </div>
+    </a>
+    <a href="#" class="game" style="text-decoration:none">
+      <div class="game-media dark">[ Leash — key art ]</div>
+      <div class="game-body">
+        <div class="game-tags"><span class="tag tag-neutral">Platformer</span></div>
+        <h2>Leash</h2>
+        <p>Short platformer about a dog and a rope. 2022. Free forever.</p>
+        <div class="game-foot"><div class="platforms">Web · itch.io</div><span style="font-weight:800">Play free →</span></div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div style="display:flex;align-items:center;gap:10px;margin-bottom:14px"><img src="logo.png" width="42" height="42" style="filter:invert(1) hue-rotate(180deg)"><span style="font-weight:900;font-size:22px;text-transform:uppercase">Wagglebum</span></div><p style="color:var(--mist);font-size:14px;line-height:1.6;max-width:320px">Indie games and the tools to build them.</p></div>
+    <div><h4>Games</h4><div class="footer-col-links"><a href="#">Hello, Good Dog</a><a href="#">Shuttle Run</a><a href="#">Sweepers</a></div></div>
+    <div><h4>Plugins</h4><div class="footer-col-links"><a href="#">WagSave</a><a href="#">Crowd AI</a><a href="#">SpriteBath</a></div></div>
+    <div><h4>Company</h4><div class="footer-col-links"><a href="#">About</a><a href="#">Blog</a><a href="#">Contact</a></div></div>
+  </div>
+  <div class="footer-bottom"><div>© 2026 Wagglebum Studios</div><div>Boston, MA</div></div>
+</footer>
+</body></html>
