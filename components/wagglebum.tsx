@@ -5,13 +5,14 @@ import { ReactNode } from 'react';
 /* ---------- Atoms ---------- */
 
 export function Button({
-  children, href, variant = 'primary', size = 'md', className = '',
+  children, href, variant = 'primary', size = 'md', className = '', onClick,
 }: {
   children: ReactNode;
   href?: string;
   variant?: 'primary' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
+  onClick?: () => void;
 }) {
   const base = 'inline-flex items-center gap-2 rounded-full font-extrabold transition-transform active:translate-y-px';
   const sizes = { sm: 'px-4 py-2 text-sm', md: 'px-5 py-3 text-[15px]', lg: 'px-7 py-3.5 text-base' };
@@ -21,7 +22,9 @@ export function Button({
     ghost: 'bg-transparent text-ink hover:bg-bone',
   };
   const cls = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
-  return href ? <Link href={href} className={cls}>{children}</Link> : <button className={cls}>{children}</button>;
+  return href
+    ? <Link href={href} className={cls} onClick={onClick}>{children}</Link>
+    : <button className={cls} onClick={onClick}>{children}</button>;
 }
 
 export function Tag({ children, tone = 'neutral' }: { children: ReactNode; tone?: 'neutral' | 'dark' | 'blush' | 'ok' }) {
@@ -43,36 +46,7 @@ export function Eyebrow({ children }: { children: ReactNode }) {
 }
 
 /* ---------- Navigation ---------- */
-
-export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | 'services' | 'about' }) {
-  const items: { id: string; label: string; href: string }[] = [
-    { id: 'games', label: 'Games', href: '/games' },
-    { id: 'plugins', label: 'Plugins', href: '/plugins' },
-    { id: 'services', label: 'Services', href: '/services' },
-    { id: 'about', label: 'About', href: '/about' },
-    { id: 'blog', label: 'Blog', href: '/blog' },
-  ];
-  return (
-    <nav className="sticky top-4 z-30 mx-auto mt-4 flex max-w-[1100px] items-center gap-4 rounded-full border border-border bg-paper/90 px-4 py-2.5 shadow-md backdrop-blur-md">
-      <Link href="/" className="flex items-center gap-2.5 text-ink no-underline">
-        <Image src="/brand/logo.png" alt="" width={34} height={34} priority />
-        <span className="text-[18px] font-black uppercase tracking-tight">Wagglebum</span>
-      </Link>
-      <div className="ml-3 flex gap-1">
-        {items.map(i =>
-          <Link key={i.id} href={i.href}
-            className={`rounded-full px-3.5 py-2 text-sm font-semibold no-underline transition-colors ${current === i.id ? 'bg-ink text-snow' : 'text-ink hover:bg-bone'}`}>
-            {i.label}
-          </Link>
-        )}
-      </div>
-      <div className="ml-auto flex items-center gap-2.5">
-        <Link href="/signin" className="px-3.5 py-2 text-sm font-bold text-ink no-underline">Sign in</Link>
-        <Button href="/get-started" size="sm">Get started →</Button>
-      </div>
-    </nav>
-  );
-}
+export { NavBar } from './NavBar';
 
 /* ---------- Cards ---------- */
 
