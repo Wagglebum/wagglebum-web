@@ -107,18 +107,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Band — Services */}
+      {/* CTA Band — Plugins */}
       <div className="mx-auto max-w-[1100px] px-6 py-14">
         <div className="relative overflow-hidden rounded-[28px] bg-ink px-12 py-14 flex items-center justify-between gap-10">
           <div className="relative z-10">
-            <Eyebrow><span className="text-mist">Services</span></Eyebrow>
+            <Eyebrow><span className="text-mist">Plugins &amp; tools</span></Eyebrow>
             <h2 className="mt-1.5 max-w-[520px] text-[40px] font-black leading-tight tracking-[-0.02em] text-snow">
-              Need a port? We&apos;ve done a few.
+              Tools we built for ourselves. Now yours too.
             </h2>
             <p className="mt-2.5 max-w-[420px] text-mist">
-              Switch, Steam Deck, iOS, web — we take your Unity game to the platforms it deserves.
+              Drop-in Unity and Unreal plugins, tested in our own games first. Buy once, own forever — no subscriptions.
             </p>
-            <Button href="/services" variant="secondary" className="mt-5 bg-snow">Book a call →</Button>
+            <Button href="/plugins" variant="secondary" className="mt-5 bg-snow">Browse all plugins →</Button>
           </div>
           <Image
             src="/brand/logo.png"
@@ -130,24 +130,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Stats */}
-      <section className="mx-auto max-w-[1100px] px-6 pb-16">
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
-          {[
-            { num: '12k+', lbl: 'Devs using our plugins' },
-            { num: '3', lbl: 'Games shipped' },
-            { num: '6', lbl: 'Plugins in the wild' },
-            { num: '1', lbl: 'Very good dog' },
-          ].map(s => (
-            <div key={s.lbl}>
-              <div className="text-[48px] font-black leading-none tracking-[-0.03em]">{s.num}</div>
-              <div className="mt-1 text-[13px] font-semibold text-fg-subtle">{s.lbl}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <Footer />
+<Footer />
     </>
   );
 }

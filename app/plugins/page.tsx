@@ -6,6 +6,23 @@ import content from '@/data/content.json';
 export const metadata = { title: 'Plugins — Wagglebum' };
 
 export default function PluginsPage() {
+  const plugins = content.plugins;
+  const hasTag = (label: string) => plugins.filter(p => p.tags.some(t => t.label === label)).length;
+  const counts = {
+    all:        plugins.length,
+    unity:      hasTag('Unity'),
+    unreal:     hasTag('Unreal'),
+    standalone: hasTag('Standalone'),
+    free:       plugins.filter(p => p.free).length,
+  };
+  const filters = [
+    `All (${counts.all})`,
+    ...(counts.unity      ? [`Unity (${counts.unity})`]           : []),
+    ...(counts.unreal     ? [`Unreal (${counts.unreal})`]         : []),
+    ...(counts.standalone ? [`Standalone (${counts.standalone})`] : []),
+    ...(counts.free       ? [`Free (${counts.free})`]             : []),
+  ];
+
   return (
     <>
       <NavBar current="plugins" />
@@ -18,7 +35,7 @@ export default function PluginsPage() {
           Drop-in plugins for Unity and Unreal. Built by people who ship games, tested in ours first. Buy once, own forever.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-2">
-          {['All (6)', 'Unity (4)', 'Unreal (2)', 'Standalone (1)', 'Free (2)'].map((f, i) => (
+          {filters.map((f, i) => (
             <button key={f} className={`rounded-full border px-4 py-2 text-[13px] font-semibold ${i === 0 ? 'border-ink bg-ink text-snow' : 'border-border bg-snow text-ink hover:border-ink/40'}`}>
               {f}
             </button>
@@ -60,7 +77,7 @@ export default function PluginsPage() {
         <div className="grid grid-cols-1 gap-6 rounded-[28px] bg-bone px-12 py-12 md:grid-cols-3">
           {[
             { eyebrow: 'Why us', title: 'We ship games too.', body: 'Every plugin is used in our own titles before we charge for it.' },
-            { eyebrow: 'Fair pricing', title: 'Buy once. Own it.', body: 'No subscriptions. Free major-version upgrades for 12 months.' },
+            { eyebrow: 'Fair pricing', title: 'Buy once. Own it.', body: 'No subscriptions.' },
             { eyebrow: 'Real support', title: 'Real humans reply.', body: 'Open an issue on GitHub. A dog-adjacent human will answer within 48h.' },
           ].map(f => (
             <div key={f.title}>

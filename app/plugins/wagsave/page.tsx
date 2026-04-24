@@ -152,7 +152,7 @@ export default function WagSavePage() {
         <h2 className="mb-7 text-center text-[36px] font-black tracking-[-0.02em]">Fair questions</h2>
         <div className="flex flex-col gap-2.5">
           {[
-            { q: 'Is this really a one-time purchase?', a: "Yes. We think subscriptions for dev tools are silly. Buy once, keep forever. Updates are free for 12 months; after that they're optional and cheap." },
+            { q: 'Is this really a one-time purchase?', a: "Yes. We think subscriptions for dev tools are silly. Buy once, keep forever." },
             { q: 'Does it work with my save system?', a: 'Probably. WagSave can import from PlayerPrefs, JsonUtility, Odin Serializer, and Easy Save. See the migration guide.' },
             { q: "What's the refund policy?", a: "14 days, no questions, no forms. Email us and we'll refund you within a business day." },
             { q: 'Unreal?', a: 'See SaveKit. Same idea, different engine, separate purchase.' },

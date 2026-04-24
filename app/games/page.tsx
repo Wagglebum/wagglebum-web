@@ -4,6 +4,20 @@ import { NavBar, Footer, Eyebrow, Tag } from '@/components/wagglebum';
 import content from '@/data/content.json';
 
 export default function GamesPage() {
+  const games = content.games;
+  const counts = {
+    all: games.length,
+    out: games.filter(g => g.status === 'Out now').length,
+    soon: games.filter(g => g.status === 'Coming soon').length,
+    proto: games.filter(g => g.status === 'Prototype').length,
+  };
+  const filters = [
+    `All (${counts.all})`,
+    ...(counts.out  ? [`Out now (${counts.out})`]      : []),
+    ...(counts.soon ? [`Coming soon (${counts.soon})`] : []),
+    ...(counts.proto? [`Prototypes (${counts.proto})`] : []),
+  ];
+
   return (
     <>
       <NavBar current="games" />
@@ -18,7 +32,7 @@ export default function GamesPage() {
           Short, warm, easy to finish in an evening. All made by the same tiny studio.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-2">
-          {['All (6)', 'Out now (3)', 'Coming soon (2)', 'Prototypes (1)'].map((f, i) => (
+          {filters.map((f, i) => (
             <button key={f} className={`rounded-full border px-4 py-2 text-[13px] font-semibold ${i === 0 ? 'border-ink bg-ink text-snow' : 'border-border bg-snow text-ink hover:border-ink/40'}`}>
               {f}
             </button>
@@ -29,7 +43,7 @@ export default function GamesPage() {
       {/* Games grid */}
       <section className="mx-auto max-w-[1100px] px-6 pb-16">
         <div className="grid grid-cols-1 gap-[22px] pt-6 md:grid-cols-2">
-          {content.games.map(game => (
+          {games.map(game => (
             <Link
               key={game.slug}
               href={game.href}

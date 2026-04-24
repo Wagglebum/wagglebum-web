@@ -1,59 +1,17 @@
 {
   "games": [
     {
-      "slug": "hello-good-dog",
-      "title": "Hello, Good Dog",
-      "description": "A cozy puzzler about walking a very good dog through a very small town. 2–4 hours, no tutorials, just vibes.",
-      "status": "Out now · Steam / itch.io",
-      "tags": ["Featured", "Cozy", "Puzzle"],
-      "platforms": "Steam · itch.io · Switch",
-      "cta": "$14.99 →",
-      "href": "/games/hello-good-dog",
-      "featured": true,
-      "new": false,
-      "dark": false,
-      "cover": null
-    },
-    {
-      "slug": "shuttle-run",
-      "title": "Shuttle Run",
-      "description": "Two-button arcade about very fast dogs and very bad pilots. 2026.",
-      "status": "In development",
-      "tags": ["Arcade", "2-button"],
-      "platforms": "Steam · Switch · Mobile",
-      "cta": "Wishlist →",
-      "href": "/games",
-      "featured": false,
-      "new": false,
-      "dark": true,
-      "cover": null
-    },
-    {
       "slug": "sweepers",
       "title": "Sweepers",
-      "description": "Chill sweeping sim. No enemies. No upgrades. Just sweeping.",
-      "status": "Prototype",
-      "tags": ["Cozy sim"],
+      "description": "Your mission..sweep up after the battle has ended.",
+      "status": "Development",
+      "tags": ["Development", "Unity"],
       "platforms": "PC · Mac",
       "cta": "Dev log →",
       "href": "/games",
       "featured": false,
       "new": false,
       "dark": false,
-      "cover": null
-    },
-    {
-      "slug": "leash",
-      "title": "Leash",
-      "description": "Short platformer about a dog and a rope. 2022. Free forever.",
-      "status": "Out now",
-      "tags": ["Platformer"],
-      "platforms": "Web · itch.io",
-      "cta": "Play free →",
-      "href": "/games",
-      "featured": false,
-      "new": false,
-      "dark": true,
       "cover": null
     }
   ],
@@ -63,10 +21,10 @@
       "title": "WagSave",
       "body": "Save games without the boilerplate. Cloud sync, migrations, undo, encryption. The last save system you'll add.",
       "tags": [
-        { "label": "New · v2.0", "tone": "blush" },
+        { "label": "New · v1.0", "tone": "blush" },
         { "label": "Unity", "tone": "neutral" }
       ],
-      "price": "$49",
+      "price": "$24.99",
       "free": false,
       "featured": true,
       "new": true,
@@ -74,89 +32,6 @@
       "href": "/plugins/wagsave",
       "icon": "W",
       "logo": "/brand/wagsave/Logo.png"
-    },
-    {
-      "slug": "crowd-ai",
-      "title": "Crowd AI",
-      "body": "Flocks, queues, and pathfinding for crowds of 1,000+. Drop it in a scene and forget about it.",
-      "tags": [
-        { "label": "Unity", "tone": "neutral" },
-        { "label": "Unreal", "tone": "neutral" }
-      ],
-      "price": "$79",
-      "free": false,
-      "featured": false,
-      "new": false,
-      "cta": "Learn more →",
-      "href": "/plugins",
-      "icon": "C",
-      "logo": null
-    },
-    {
-      "slug": "savekit",
-      "title": "SaveKit",
-      "body": "WagSave's bigger Unreal sibling. Same idea, different engine, fully native Blueprint support.",
-      "tags": [
-        { "label": "Unreal", "tone": "neutral" }
-      ],
-      "price": "$59",
-      "free": false,
-      "featured": false,
-      "new": false,
-      "cta": "Learn more →",
-      "href": "/plugins",
-      "icon": "S",
-      "logo": null
-    },
-    {
-      "slug": "spritebath",
-      "title": "SpriteBath",
-      "body": "Batch-clean and re-export sprite atlases in one drag. Integrates with your CI in one line.",
-      "tags": [
-        { "label": "Unity", "tone": "neutral" },
-        { "label": "Free", "tone": "neutral" }
-      ],
-      "price": "Free",
-      "free": true,
-      "featured": false,
-      "new": false,
-      "cta": "Download →",
-      "href": "/plugins",
-      "icon": "·",
-      "logo": null
-    },
-    {
-      "slug": "dropdown-pro",
-      "title": "Dropdown Pro",
-      "body": "Dropdowns that don't look like a 2012 survey. Themeable, accessible, fast.",
-      "tags": [
-        { "label": "Unity", "tone": "neutral" }
-      ],
-      "price": "$19",
-      "free": false,
-      "featured": false,
-      "new": false,
-      "cta": "Learn more →",
-      "href": "/plugins",
-      "icon": "▾",
-      "logo": null
-    },
-    {
-      "slug": "wagglebum-sdk",
-      "title": "Wagglebum SDK",
-      "body": "Little utilities we use every day, wrapped up and open-sourced. Bring your own engine.",
-      "tags": [
-        { "label": "Standalone", "tone": "neutral" },
-        { "label": "Free", "tone": "neutral" }
-      ],
-      "price": "Free · MIT",
-      "free": true,
-      "featured": false,
-      "new": false,
-      "cta": "GitHub →",
-      "href": "/plugins",
-      "icon": "⌘",
-      "logo": null
     }
   ]
 }

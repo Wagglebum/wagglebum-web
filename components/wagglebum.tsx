@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import content from '@/data/content.json';
 
 /* ---------- Atoms ---------- */
 
@@ -128,9 +129,12 @@ export function Hero({
 
 export function Footer() {
   const cols: [string, { label: string; href: string }[]][] = [
-    ['Games', [{ label: 'Hello, Good Dog', href: '/games/hello-good-dog' }, { label: 'Shuttle Run', href: '/games' }, { label: 'Sweepers', href: '/games' }, { label: 'All games →', href: '/games' }]],
-    ['Plugins', [{ label: 'WagSave', href: '/plugins/wagsave' }, { label: 'Crowd AI', href: '/plugins' }, { label: 'SpriteBath', href: '/plugins' }]],
-    ['Company', [{ label: 'About', href: '/about' }, { label: 'Blog', href: '/blog' }, { label: 'Press kit', href: '/press' }, { label: 'Contact', href: '/contact' }]],
+    ['Games', [
+      ...content.games.map(g => ({ label: g.title, href: g.href })),
+      { label: 'All games →', href: '/games' },
+    ]],
+    ['Plugins', content.plugins.map(p => ({ label: p.title, href: p.href }))],
+    ['Company', [{ label: 'About', href: '/about' }, { label: 'Support', href: '/support' }, { label: 'Contact', href: '/contact' }]],
   ];
   return (
     <footer className="mt-16 bg-ink px-6 pt-14 pb-8 text-snow">
@@ -157,9 +161,8 @@ export function Footer() {
           </div>
         )}
       </div>
-      <div className="mx-auto mt-10 flex max-w-[1100px] justify-between border-t border-white/10 pt-6 text-xs text-mist">
+      <div className="mx-auto mt-10 max-w-[1100px] border-t border-white/10 pt-6 text-xs text-mist">
         <div>© 2026 Wagglebum Studios — made with a waggle</div>
-        <div>Boston, MA</div>
       </div>
     </footer>
   );

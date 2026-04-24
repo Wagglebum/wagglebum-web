@@ -4,17 +4,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
-import { Button } from './wagglebum';
 
 const items = [
-  { id: 'games',    label: 'Games',    href: '/games' },
-  { id: 'plugins',  label: 'Plugins',  href: '/plugins' },
-  { id: 'services', label: 'Services', href: '/services' },
-  { id: 'about',    label: 'About',    href: '/about' },
-  { id: 'blog',     label: 'Blog',     href: '/blog' },
+  { id: 'games',   label: 'Games',   href: '/games' },
+  { id: 'plugins', label: 'Plugins', href: '/plugins' },
+  { id: 'support', label: 'Support', href: '/support' },
+  { id: 'about',   label: 'About',   href: '/about' },
 ];
 
-export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | 'services' | 'about' }) {
+export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | 'about' | 'support' }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -34,12 +32,6 @@ export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | '
               {i.label}
             </Link>
           ))}
-        </div>
-
-        {/* Desktop actions */}
-        <div className="ml-auto hidden items-center gap-2.5 md:flex">
-          <Link href="/signin" className="px-3.5 py-2 text-sm font-bold text-ink no-underline">Sign in</Link>
-          <Button href="/get-started" size="sm">Get started →</Button>
         </div>
 
         {/* Mobile hamburger */}
@@ -63,15 +55,6 @@ export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | '
               </Link>
             ))}
           </nav>
-          <div className="mt-6 flex flex-col gap-3 border-t border-border pt-6">
-            <Link href="/signin" onClick={() => setOpen(false)}
-              className="rounded-[14px] px-4 py-3.5 text-[18px] font-bold text-ink no-underline hover:bg-bone">
-              Sign in
-            </Link>
-            <Button href="/get-started" size="lg" className="w-full justify-center" onClick={() => setOpen(false)}>
-              Get started →
-            </Button>
-          </div>
         </div>
       )}
     </>
