@@ -24,7 +24,8 @@
         { "label": "New · v1.0", "tone": "blush" },
         { "label": "Unity", "tone": "neutral" }
       ],
-      "price": "$24.99",
+      "price": "$49.99",
+      "externalLink": "https://assetstore.unity.com/packages/tools/utilities/wagsave",
       "free": false,
       "featured": true,
       "new": true,

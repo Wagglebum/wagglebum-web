@@ -20,10 +20,12 @@ export default function Home() {
         {newItems.length > 0 && (
           <div className="flex flex-wrap justify-center gap-2">
             {newItems.map(item => (
-              <Tag key={item.href} tone="blush">
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-blush-500" />
-                New · {item.title}
-              </Tag>
+              <Link key={item.href} href={item.href} className="no-underline">
+                <Tag tone="blush">
+                  <span className="inline-block h-1.5 w-1.5 rounded-full bg-blush-500" />
+                  New · {item.title}
+                </Tag>
+              </Link>
             ))}
           </div>
         )}
