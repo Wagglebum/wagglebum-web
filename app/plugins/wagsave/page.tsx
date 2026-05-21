@@ -13,8 +13,8 @@ export default function WagSavePage() {
 
       {/* Hero */}
       <section className="mx-auto max-w-[1100px] px-6 pt-14 pb-6 text-center">
-        <div className="mx-auto mb-5 flex h-[84px] w-[84px] items-center justify-center rounded-[22px] bg-snow shadow-pop overflow-hidden border border-border">
-          <Image src="/brand/wagsave/Logo.png" alt="WagSave" width={84} height={84} className="object-cover" />
+        <div className="mx-auto mb-5 flex h-[42px] w-[42px] items-center justify-center rounded-[12px] bg-snow shadow-pop overflow-hidden border border-border">
+          <Image src="/brand/wagsave/Logo.png" alt="WagSave" width={42} height={42} className="object-cover" />
         </div>
 <h1 className="mt-4 text-[72px] font-black leading-none tracking-[-0.03em]">WagSave</h1>
         <p className="mx-auto mt-4 max-w-[580px] text-[20px] leading-relaxed text-fg-muted">
@@ -69,7 +69,7 @@ export default function WagSavePage() {
       <section className="mx-auto grid max-w-[1100px] grid-cols-1 gap-10 px-6 pb-14 md:grid-cols-2 md:items-center">
         <div>
           <Eyebrow>Getting started</Eyebrow>
-          <h2 className="mt-3 text-[36px] font-black leading-tight tracking-[-0.02em]">Two calls. That&apos;s the whole API.</h2>
+          <h2 className="mt-3 text-[36px] font-black leading-tight tracking-[-0.02em]">Two calls. That&apos;s just the start</h2>
           <p className="mt-3 text-[16px] leading-relaxed text-fg-muted">
             Drop the package in, configure your save profile in the Editor, then call <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Save()</code> and <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Load()</code>. Format, cloud, and encryption are all set from the inspector.
           </p>
