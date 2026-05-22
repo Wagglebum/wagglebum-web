@@ -8,11 +8,12 @@ import { Menu, X } from 'lucide-react';
 const items = [
   { id: 'games',   label: 'Games',   href: '/games' },
   { id: 'plugins', label: 'Plugins', href: '/plugins' },
+  { id: 'docs',    label: 'Docs',    href: '/docs' },
   { id: 'support', label: 'Support', href: '/support' },
   { id: 'about',   label: 'About',   href: '/about' },
 ];
 
-export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | 'about' | 'support' }) {
+export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | 'docs' | 'about' | 'support' }) {
   const [open, setOpen] = useState(false);
 
   return (

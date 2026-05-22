@@ -1,0 +1,66 @@
+name: Sync Docs
+
+on:
+  workflow_dispatch:
+
+# Directory mapping between the private docs repo and this repo.
+# SOURCE_DIR_* paths are relative to the root of the private docs repo.
+# TARGET_DIR_* paths are relative to the root of this repo.
+#
+# To add a third mapping: add SOURCE_DIR_3 and TARGET_DIR_3 here,
+# then add a matching "Copy section N" step in the sync job below.
+env:
+  SOURCE_DIR_1: WaggleBum/WagSave/Docs
+  TARGET_DIR_1: content/docs/guide
+  SOURCE_DIR_2: WaggleBum/WagSave/Core/Docs
+  TARGET_DIR_2: content/docs/api
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out wagglebum-web
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.DOCS_REPO_PAT }}
+
+      - name: Check out private docs repo
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.DOCS_REPO }}
+          token: ${{ secrets.DOCS_REPO_PAT }}
+          path: _docs-source
+
+      # Copy section 1
+      - name: Copy ${{ env.SOURCE_DIR_1 }}
+        run: |
+          mkdir -p "${{ env.TARGET_DIR_1 }}"
+          rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_1 }}/" "${{ env.TARGET_DIR_1 }}/"
+
+      # Copy section 2
+      - name: Copy ${{ env.SOURCE_DIR_2 }}
+        run: |
+          mkdir -p "${{ env.TARGET_DIR_2 }}"
+          rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_2 }}/" "${{ env.TARGET_DIR_2 }}/"
+
+      # To add a third mapping, duplicate the step above and change the index:
+      # - name: Copy ${{ env.SOURCE_DIR_3 }}
+      #   run: |
+      #     mkdir -p "${{ env.TARGET_DIR_3 }}"
+      #     rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_3 }}/" "${{ env.TARGET_DIR_3 }}/"
+
+      - name: Remove temporary docs checkout
+        run: rm -rf _docs-source
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "docs: sync from private repo [skip ci]"
+            git push
+          fi
