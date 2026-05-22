@@ -73,6 +73,26 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      # If no docs have been synced yet, create minimal placeholder files so
+      # generateStaticParams() returns at least one route. Next.js output:export
+      # fails the build when a dynamic route produces zero static params.
+      # These files are never committed — they exist only during the build.
+      - name: Ensure docs content exists for build
+        run: |
+          for dir in content/docs/guide content/docs/api; do
+            mkdir -p "$dir"
+            if [ -z "$(ls -A "$dir" 2>/dev/null)" ]; then
+              cat > "$dir/coming-soon.md" <<'EOF'
+          ---
+          title: Coming Soon
+          description: Documentation will appear here after the next sync.
+          order: 1
+          ---
+          Documentation is on its way.
+          EOF
+            fi
+          done
+
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact
