@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
-import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
 import { getAllDocSlugs, getDocBySlug } from '@/lib/docs';
-import { MdxContent } from './MdxContent';
 
 // Only render paths returned by generateStaticParams; all others are 404.
 export const dynamicParams = false;
@@ -28,13 +27,12 @@ export default async function DocPage({ params }: Props) {
   const doc = getDocBySlug(params.section, params.slug);
   if (!doc) notFound();
 
-  const mdxSource = await serialize(doc.content, {
-    mdxOptions: { remarkPlugins: [remarkGfm] },
-  });
-
   return (
     <main className="mx-auto max-w-3xl px-6 py-12">
-      <MdxContent source={mdxSource} />
+      <MDXRemote
+        source={doc.content}
+        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+      />
     </main>
   );
 }
