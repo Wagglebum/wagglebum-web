@@ -32,6 +32,10 @@ jobs:
           token: ${{ secrets.DOCS_REPO_PAT }}
           path: _docs-source
 
+      # Show the top two levels of the private repo so path problems are obvious
+      - name: List private repo structure
+        run: find _docs-source -maxdepth 3 -type d | sort
+
       # Copy section 1
       - name: Copy ${{ env.SOURCE_DIR_1 }}
         run: |
