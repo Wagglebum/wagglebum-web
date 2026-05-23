@@ -4,15 +4,15 @@
       "slug": "sweepers",
       "title": "Sweepers",
       "description": "Your mission..sweep up after the battle has ended.",
-      "status": "Development",
-      "tags": ["Development", "Unity"],
+      "status": "In production",
+      "tags": ["Action", "RPG", "Sci-fi"],
       "platforms": "PC · Mac",
       "cta": "Dev log →",
       "href": "/games",
       "featured": false,
       "new": false,
       "dark": false,
-      "cover": null
+      "cover": "/brand/sweepers/Logo.png"
     }
   ],
   "plugins": [
