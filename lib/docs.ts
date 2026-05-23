@@ -51,7 +51,7 @@ export function getDocBySlug(sectionId: string, slug: string): Doc | null {
   const { data, content } = matter(raw);
 
   return {
-    title: data.title ?? slug,
+    title: data.title ?? (slug === 'index' ? 'Home' : slug),
     description: data.description ?? "",
     order: typeof data.order === "number" ? data.order : 0,
     sectionId,
@@ -84,7 +84,11 @@ export function getNavStructure(): NavSection[] {
             ? { slug, title: doc.title, order: doc.order }
             : { slug, title: slug, order: 0 };
         })
-        .sort((a, b) => a.order - b.order);
+        .sort((a, b) => {
+          if (a.slug === 'index') return -1;
+          if (b.slug === 'index') return 1;
+          return a.order - b.order;
+        });
 
       return { id: source.id, label: source.label, order: source.order, docs };
     })

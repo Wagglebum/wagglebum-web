@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import remarkGfm from 'remark-gfm';
+import { remarkStripMdLinks } from '@/lib/remark-strip-md-links';
 import { getAllDocSlugs, getDocBySlug } from '@/lib/docs';
 
 // Only render paths returned by generateStaticParams; all others are 404.
@@ -28,11 +29,11 @@ export default async function DocPage({ params }: Props) {
   if (!doc) notFound();
 
   return (
-    <main className="mx-auto max-w-3xl px-6 py-12">
+    <article className="prose prose-wag max-w-none">
       <MDXRemote
         source={doc.content}
-        options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+        options={{ mdxOptions: { remarkPlugins: [remarkGfm, remarkStripMdLinks] } }}
       />
-    </main>
+    </article>
   );
 }

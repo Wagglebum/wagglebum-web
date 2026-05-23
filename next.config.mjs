@@ -2,7 +2,7 @@
 const nextConfig = {
     // basePath: "/allensnow-com-web",
     // assetPrefix: "/allensnow-com-web/",
-    output: "export",  // <=== enables static exports
+    output: process.env.NODE_ENV === "production" ? "export" : undefined,
     reactStrictMode: true,
     images: {
       unoptimized: true

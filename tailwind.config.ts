@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -49,8 +50,32 @@ const config: Config = {
         waggle: { '0%, 100%': { transform: 'rotate(0deg)' }, '25%': { transform: 'rotate(-6deg)' }, '75%': { transform: 'rotate(6deg)' } },
       },
       animation: { waggle: 'waggle 600ms ease-in-out' },
+      typography: {
+        wag: {
+          css: {
+            '--tw-prose-body':        '#3a3a3a',
+            '--tw-prose-headings':    '#141414',
+            '--tw-prose-lead':        '#5c5c5c',
+            '--tw-prose-links':       '#7a4f46',
+            '--tw-prose-bold':        '#141414',
+            '--tw-prose-counters':    '#8a8a8a',
+            '--tw-prose-bullets':     '#bdbdbd',
+            '--tw-prose-hr':          '#e8e8e8',
+            '--tw-prose-quotes':      '#3a3a3a',
+            '--tw-prose-quote-borders': '#d9d9d9',
+            '--tw-prose-captions':    '#8a8a8a',
+            '--tw-prose-code':        '#141414',
+            '--tw-prose-pre-code':    '#f2efe9',
+            '--tw-prose-pre-bg':      '#222222',
+            '--tw-prose-th-borders':  '#e8e8e8',
+            '--tw-prose-td-borders':  '#e8e8e8',
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    typography,
+  ],
 };
 export default config;
