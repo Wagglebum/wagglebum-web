@@ -11,7 +11,7 @@
 您也可以隨時透過 Unity 選單列開啟 WagSave 編輯器視窗：
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 在視窗頂部的下拉選單中選擇您的資源。
@@ -29,7 +29,7 @@ Assets/
 
 ## 3. 開啟 WagSave 編輯器視窗
 
-`Window > WagSave`
+`Window > WagSave > Editor`
 
 ## 4. 選擇輸出格式
 

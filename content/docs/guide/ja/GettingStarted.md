@@ -17,7 +17,7 @@ Assets > Create > WaggleBum > WagSave > WagSave (Save System)
 Unity のメニューバーからいつでも WagSave エディタウィンドウを開くことができます。
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 ウィンドウ上部のドロップダウンからアセットを選択してください。
@@ -42,7 +42,7 @@ Assets/
 ## 3. WagSave エディタウィンドウを開く
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 エディタウィンドウはすべての設定を行う場所です。出力フォーマット、セーブスロット、オートセーブ、暗号化、ログなどをここで設定します。ウィンドウ上部のドロップダウンからアセットを選択してください。

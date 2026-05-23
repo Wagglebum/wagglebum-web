@@ -11,7 +11,7 @@
 也可以随时通过 Unity 菜单栏打开 WagSave 编辑器窗口：
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 在窗口顶部的下拉菜单中选择您的资产。
@@ -31,7 +31,7 @@ Assets/
 
 ## 3. 打开 WagSave 编辑器窗口
 
-`Window > WagSave`
+`Window > WagSave > Editor`
 
 编辑器窗口是所有配置操作的入口——包括输出格式、存档槽位、自动保存、加密、日志等。
 

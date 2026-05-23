@@ -12,7 +12,7 @@
 
 ## 配置要保存的内容
 
-1. 打开 `Window > WagSave`
+1. 打开 `Window > WagSave > Editor`
 2. 导航到 **Scene Content**
 3. 在列表中找到目标 GameObject，点击 **Configure**
 
@@ -26,7 +26,7 @@
 
 ## 预制体支持
 
-1. 打开 `Window > WagSave`
+1. 打开 `Window > WagSave > Editor`
 2. 导航到 **Prefabs**
 3. 找到目标预制体，点击 **Configure**
 

@@ -26,7 +26,7 @@ Only one `WagSaveComponent` is allowed per GameObject (`DisallowMultipleComponen
 
 `WagSaveComponent` does not save everything — you select exactly which fields and properties to include. This is done through the WagSave editor window.
 
-1. Open `Window > WagSave`
+1. Open `Window > WagSave > Editor`
 2. Navigate to **Scene Content**
 3. Find the GameObject in the list and click **Configure**
 
@@ -49,7 +49,7 @@ WagSave uses reflection to read and write values. Any field or property that is:
 
 For prefabs, configure the `WagSaveComponent` on the **prefab asset** rather than individual scene instances. This way all instances share the same save configuration.
 
-1. Open `Window > WagSave`
+1. Open `Window > WagSave > Editor`
 2. Navigate to **Prefabs**
 3. Find the prefab and click **Configure**
 
@@ -105,4 +105,4 @@ component.SetSelectionValue("componentId.p|health", 75);
 
 ## Inspecting Components in the Debugger
 
-While in Play Mode, open `Window > WagSave` and navigate to **Debugger**. The **Save Content** panel lists every `WagSaveComponent` in the active scene, how many save items are configured on each, and provides **Configure** and **Focus** buttons.
+While in Play Mode, open `Window > WagSave > Editor` and navigate to **Debugger**. The **Save Content** panel lists every `WagSaveComponent` in the active scene, how many save items are configured on each, and provides **Configure** and **Focus** buttons.

@@ -17,7 +17,7 @@ This creates a `WagSave` ScriptableObject. Name it something meaningful — for 
 You can open the WagSave editor window at any time from the Unity menu bar:
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 Select your asset from the dropdown at the top of the window.
@@ -42,7 +42,7 @@ Assets/
 ## 3. Open the WagSave Editor Window
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 The editor window is where all configuration happens — output format, save slots, autosave, encryption, logging, and more. Select your asset from the dropdown at the top.
@@ -66,19 +66,7 @@ For most projects, **Binary** is the recommended starting point.
 
 ---
 
-## 5. Add WagSaveManager to Your Scene
-
-`WagSaveManager` is a MonoBehaviour that drives the autosave timer and scene-change logic. Add it to a GameObject in your scene (typically a persistent manager object).
-
-```
-Add Component > WaggleBum > WagSave > WagSave Manager
-```
-
-You only need one `WagSaveManager` in any scene that uses autosave. It finds the active `WagSave` instance automatically at runtime.
-
----
-
-## 6. Mark GameObjects for Saving
+## 5. Mark GameObjects for Saving
 
 Add a `WagSaveComponent` to any GameObject whose state you want to save:
 
@@ -92,7 +80,7 @@ See [WagSave Component](WagSaveComponent.md) for a full walkthrough.
 
 ---
 
-## 7. Save and Load
+## 6. Save and Load
 
 ### Via code
 

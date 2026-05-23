@@ -26,7 +26,7 @@ Solo se permite un `WagSaveComponent` por GameObject (se aplica `DisallowMultipl
 
 `WagSaveComponent` no guarda todo — tú seleccionas exactamente qué campos y propiedades incluir. Esto se hace a través de la ventana del editor de WagSave.
 
-1. Abre `Window > WagSave`
+1. Abre `Window > WagSave > Editor`
 2. Navega a **Scene Content**
 3. Encuentra el GameObject en la lista y haz clic en **Configure**
 
@@ -49,7 +49,7 @@ WagSave usa reflexión para leer y escribir valores. Cualquier campo o propiedad
 
 Para prefabs, configura el `WagSaveComponent` en el **asset de prefab** en lugar de en instancias individuales de la escena. De este modo, todas las instancias comparten la misma configuración de guardado.
 
-1. Abre `Window > WagSave`
+1. Abre `Window > WagSave > Editor`
 2. Navega a **Prefabs**
 3. Encuentra el prefab y haz clic en **Configure**
 
@@ -105,4 +105,4 @@ component.SetSelectionValue("componentId.p|health", 75);
 
 ## Inspeccionar Componentes en el Depurador
 
-Mientras estás en el Modo de Reproducción, abre `Window > WagSave` y navega a **Debugger**. El panel **Save Content** lista cada `WagSaveComponent` en la escena activa, cuántos elementos de guardado están configurados en cada uno, y proporciona botones **Configure** y **Focus**.
+Mientras estás en el Modo de Reproducción, abre `Window > WagSave > Editor` y navega a **Debugger**. El panel **Save Content** lista cada `WagSaveComponent` en la escena activa, cuántos elementos de guardado están configurados en cada uno, y proporciona botones **Configure** y **Focus**.

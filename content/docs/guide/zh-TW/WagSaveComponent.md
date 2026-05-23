@@ -10,7 +10,7 @@
 
 ## 設定要儲存的內容
 
-1. 開啟 `Window > WagSave` → **Scene Content** → 點擊 **Configure**
+1. 開啟 `Window > WagSave > Editor` → **Scene Content** → 點擊 **Configure**
 
 ### 哪些內容可以儲存？
 
@@ -20,7 +20,7 @@
 
 ## 預製體支援
 
-1. 開啟 `Window > WagSave` → **Prefabs** → 點擊 **Configure**
+1. 開啟 `Window > WagSave > Editor` → **Prefabs** → 點擊 **Configure**
 
 ## 場景識別
 

@@ -26,7 +26,7 @@ gameObject.AddComponent<WagSaveComponent>();
 
 `WagSaveComponent` はすべてのフィールドを自動的にセーブするわけではありません。含めるフィールドやプロパティを WagSave エディタウィンドウで選択します。
 
-1. `Window > WagSave` を開く
+1. `Window > WagSave > Editor` を開く
 2. **Scene Content** に移動する
 3. リストから目的の GameObject を見つけ、**Configure** をクリックする
 
@@ -48,7 +48,7 @@ WagSave はリフレクションを使って値の読み書きを行います。
 
 プレハブの場合は、個々のシーンインスタンスではなく **プレハブアセット** 上で `WagSaveComponent` を設定します。こうすることで、すべてのインスタンスが同じセーブ設定を共有します。
 
-1. `Window > WagSave` を開く
+1. `Window > WagSave > Editor` を開く
 2. **Prefabs** に移動する
 3. プレハブを見つけ、**Configure** をクリックする
 
@@ -104,4 +104,4 @@ component.SetSelectionValue("componentId.p|health", 75);
 
 ## デバッガーでコンポーネントを確認する
 
-プレイモード中に `Window > WagSave` を開き、**Debugger** に移動します。**Save Content** パネルにはアクティブなシーン内のすべての `WagSaveComponent` が一覧表示され、それぞれに設定されたセーブアイテム数と **Configure**・**Focus** ボタンが表示されます。
+プレイモード中に `Window > WagSave > Editor` を開き、**Debugger** に移動します。**Save Content** パネルにはアクティブなシーン内のすべての `WagSaveComponent` が一覧表示され、それぞれに設定されたセーブアイテム数と **Configure**・**Focus** ボタンが表示されます。

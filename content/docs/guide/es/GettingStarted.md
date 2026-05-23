@@ -17,7 +17,7 @@ Esto crea un ScriptableObject `WagSave`. Ponle un nombre significativo — por e
 También puedes abrir la ventana del editor de WagSave en cualquier momento desde la barra de menú de Unity:
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 Selecciona tu asset en el desplegable de la parte superior de la ventana.
@@ -42,7 +42,7 @@ Assets/
 ## 3. Abrir la Ventana del Editor de WagSave
 
 ```
-Window > WagSave
+Window > WagSave > Editor
 ```
 
 La ventana del editor es donde ocurre toda la configuración — formato de salida, ranuras de guardado, guardado automático, cifrado, registro y más. Selecciona tu asset en el desplegable de la parte superior.
