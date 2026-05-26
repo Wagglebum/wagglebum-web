@@ -4,7 +4,19 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { Search, X } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import Fuse from 'fuse.js';
 import type { SearchResult } from '@/app/api/search/route';
+
+import type { IFuseOptions } from 'fuse.js';
+
+const FUSE_OPTIONS: IFuseOptions<SearchResult> = {
+  keys: [
+    { name: 'title',   weight: 2 },
+    { name: 'excerpt', weight: 1 },
+  ],
+  threshold: 0.4,
+  includeScore: true,
+};
 
 const TYPE_LABEL: Record<string, string> = {
   doc:    'Doc',
@@ -18,11 +30,20 @@ export function SearchBar() {
   const [query, setQuery]     = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [cursor, setCursor]   = useState(-1);
+  const [fuse, setFuse]       = useState<Fuse<SearchResult> | null>(null);
 
   const inputRef     = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const debounceRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
   const router       = useRouter();
+
+  // Load the search index once and initialise Fuse.
+  useEffect(() => {
+    fetch('/api/search')
+      .then(r => r.json())
+      .then((data: SearchResult[]) => setFuse(new Fuse(data, FUSE_OPTIONS)))
+      .catch(() => { /* fail silently — search just won't work */ });
+  }, []);
 
   const close = useCallback(() => {
     setOpen(false);
@@ -35,17 +56,17 @@ export function SearchBar() {
     if (open) inputRef.current?.focus();
   }, [open]);
 
+  // Run Fuse search client-side on every keystroke (debounced).
   useEffect(() => {
     if (debounceRef.current) clearTimeout(debounceRef.current);
     if (query.length < 2) { setResults([]); return; }
-    debounceRef.current = setTimeout(async () => {
-      const res  = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
-      const data = await res.json() as SearchResult[];
-      setResults(data);
+    debounceRef.current = setTimeout(() => {
+      if (!fuse) return;
+      setResults(fuse.search(query, { limit: 8 }).map(r => r.item));
       setCursor(-1);
     }, 200);
     return () => { if (debounceRef.current) clearTimeout(debounceRef.current); };
-  }, [query]);
+  }, [query, fuse]);
 
   useEffect(() => {
     if (!open) return;
