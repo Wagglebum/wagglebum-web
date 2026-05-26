@@ -2,7 +2,10 @@ import Link from 'next/link';
 import { Search } from 'lucide-react';
 import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
-export const metadata = { title: 'WagSave Support — Wagglebum' };
+export const metadata = {
+  title: 'WagSave Support',
+  description: 'Get help with WagSave — bug reports, Unity version compatibility, licensing questions, and documentation.',
+};
 
 async function getIssues(): Promise<{ id: number; number: number; title: string; html_url: string; state: string; user: { login: string } }[]> {
   try {

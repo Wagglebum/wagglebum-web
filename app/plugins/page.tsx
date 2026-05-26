@@ -3,7 +3,10 @@ import Link from 'next/link';
 import { NavBar, Footer, Eyebrow, Tag } from '@/components/wagglebum';
 import content from '@/data/content.json';
 
-export const metadata = { title: 'Plugins — Wagglebum' };
+export const metadata = {
+  title: 'Plugins',
+  description: 'Production-ready Unity and Unreal plugins from Wagglebum. Buy once, own it forever. No subscriptions.',
+};
 
 export default function PluginsPage() {
   const plugins = content.plugins;

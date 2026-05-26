@@ -3,6 +3,16 @@ import Link from 'next/link';
 import { NavBar, Footer, Button, Tag, Eyebrow } from '@/components/wagglebum';
 import content from '@/data/content.json';
 
+export const metadata = {
+  description: 'Wagglebum makes indie games and builds the plugins that help other studios ship theirs. One dog-shaped team, two kinds of work.',
+  openGraph: {
+    title: 'Wagglebum — Indie games + tools',
+    description: 'Wagglebum makes indie games and builds the plugins that help other studios ship theirs.',
+    images: [{ url: '/brand/logo.png', width: 512, height: 512, alt: 'Wagglebum' }],
+  },
+  twitter: { card: 'summary' },
+};
+
 const featuredGames = content.games.slice(0, 3);
 const featuredPlugins = content.plugins.slice(0, 3);
 const newItems = [
