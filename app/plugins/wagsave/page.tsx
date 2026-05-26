@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { NavBar, Footer, Button, Eyebrow } from '@/components/wagglebum';
+import { VimeoEmbed } from '@/components/VimeoEmbed';
 import content from '@/data/content.json';
 
 export const metadata = { title: 'WagSave — Wagglebum' };
@@ -39,6 +40,13 @@ export default function WagSavePage() {
           </div>
         </div>
       </section>
+
+      {/* Video */}
+      {plugin.vimeoUrl && (
+        <section className="mx-auto max-w-[1100px] px-6 pb-14">
+          <VimeoEmbed url={plugin.vimeoUrl} title={`${plugin.title} overview`} />
+        </section>
+      )}
 
       {/* Features */}
       <section className="mx-auto max-w-[1100px] px-6 pb-14 text-center">

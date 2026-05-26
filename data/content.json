@@ -12,7 +12,8 @@
       "featured": false,
       "new": false,
       "dark": false,
-      "cover": "/brand/sweepers/Logo.png"
+      "cover": "/brand/sweepers/Logo.png",
+      "vimeoUrl": ""
     }
   ],
   "plugins": [
@@ -32,7 +33,8 @@
       "cta": "Learn more →",
       "href": "/plugins/wagsave",
       "icon": "W",
-      "logo": "/brand/wagsave/Logo.png"
+      "logo": "/brand/wagsave/Logo.png",
+      "vimeoUrl": "https://vimeo.com/1194213436"
     }
   ]
 }

@@ -1,9 +1,13 @@
 import Image from 'next/image';
 import { NavBar, Footer, Button, Tag, Eyebrow } from '@/components/wagglebum';
+import { VimeoEmbed } from '@/components/VimeoEmbed';
+import content from '@/data/content.json';
 
 export const metadata = {
   title: 'Hello, Good Dog — Wagglebum',
 };
+
+const game = content.games.find(g => g.slug === 'hello-good-dog');
 
 export default function HelloGoodDogPage() {
   return (
@@ -48,6 +52,13 @@ export default function HelloGoodDogPage() {
         <div className="aspect-[16/10] rounded-[16px] border border-border bg-bone flex items-center justify-center font-mono text-xs text-stone">[ Screenshot 4 ]</div>
         <div className="aspect-[16/10] rounded-[16px] border border-border bg-bone flex items-center justify-center font-mono text-xs text-stone">[ Screenshot 5 ]</div>
       </div>
+
+      {/* Video */}
+      {game?.vimeoUrl && (
+        <section className="mx-auto max-w-[1100px] px-6 pt-10">
+          <VimeoEmbed url={game.vimeoUrl} title="Hello, Good Dog — trailer" />
+        </section>
+      )}
 
       {/* About */}
       <section className="mx-auto max-w-[820px] px-6 py-14">
