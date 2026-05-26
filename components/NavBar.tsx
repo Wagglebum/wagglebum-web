@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import { SearchBar } from './SearchBar';
 
 const items = [
   { id: 'games',   label: 'Games',   href: '/games' },
@@ -35,14 +36,17 @@ export function NavBar({ current }: { current?: 'home' | 'games' | 'plugins' | '
           ))}
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="ml-auto rounded-full p-2 text-ink hover:bg-bone md:hidden"
-          onClick={() => setOpen(o => !o)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        {/* Right side: search + mobile hamburger */}
+        <div className="ml-auto flex items-center gap-1">
+          <SearchBar />
+          <button
+            className="rounded-full p-2 text-ink hover:bg-bone md:hidden"
+            onClick={() => setOpen(o => !o)}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile drawer */}
