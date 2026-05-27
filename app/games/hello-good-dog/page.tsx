@@ -4,7 +4,8 @@ import { VimeoEmbed } from '@/components/VimeoEmbed';
 import content from '@/data/content.json';
 
 export const metadata = {
-  title: 'Hello, Good Dog — Wagglebum',
+  title: 'Hello, Good Dog',
+  description: 'A cozy puzzler about walking a very good dog through a very small town. 2–4 hours. No tutorials. Just vibes.',
 };
 
 const game = content.games.find(g => g.slug === 'hello-good-dog');

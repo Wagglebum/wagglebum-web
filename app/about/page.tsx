@@ -1,7 +1,10 @@
 import Image from 'next/image';
 import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
-export const metadata = { title: 'About — Wagglebum' };
+export const metadata = {
+  title: 'About',
+  description: 'Wagglebum is a tiny indie studio that makes games and builds the tools we wish existed. Small on purpose.',
+};
 
 const values = [
   {

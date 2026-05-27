@@ -21,7 +21,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const doc = getDocBySlug(params.section, params.slug);
   if (!doc) return {};
-  return { title: doc.title };
+  return {
+    title: doc.title,
+    description: doc.description || undefined,
+  };
 }
 
 export default async function DocPage({ params }: Props) {

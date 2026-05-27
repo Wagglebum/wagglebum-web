@@ -1,6 +1,9 @@
 import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
-export const metadata = { title: 'Support — Wagglebum' };
+export const metadata = {
+  title: 'Support',
+  description: 'Get help with WagSave or any Wagglebum game. Bug reports, licensing questions, and general support.',
+};
 
 const topics = [
   {

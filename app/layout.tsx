@@ -3,8 +3,20 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Wagglebum — Indie games + tools",
-  description: "Wagglebum makes indie games and builds the plugins that help other studios ship theirs.",
+  metadataBase: new URL('https://wagglebum.com'),
+  title: {
+    default: 'Wagglebum — Indie games + tools',
+    template: '%s — Wagglebum',
+  },
+  description: 'Wagglebum makes indie games and builds the plugins that help other studios ship theirs. One dog-shaped team, two kinds of work.',
+  openGraph: {
+    siteName: 'Wagglebum',
+    type: 'website',
+    images: [{ url: '/brand/logo.png', width: 512, height: 512, alt: 'Wagglebum' }],
+  },
+  twitter: {
+    card: 'summary',
+  },
 };
 
 export default function RootLayout({

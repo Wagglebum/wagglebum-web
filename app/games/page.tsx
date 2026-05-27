@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { NavBar, Footer, Eyebrow, Tag } from '@/components/wagglebum';
 import content from '@/data/content.json';
 
+export const metadata = {
+  title: 'Games',
+  description: 'Browse all Wagglebum games — indie titles for PC, Mac, and console.',
+};
+
 export default function GamesPage() {
   const games = content.games;
   const counts = {

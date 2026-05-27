@@ -3,7 +3,22 @@ import { NavBar, Footer, Button, Eyebrow } from '@/components/wagglebum';
 import { VimeoEmbed } from '@/components/VimeoEmbed';
 import content from '@/data/content.json';
 
-export const metadata = { title: 'WagSave — Wagglebum' };
+export const metadata = {
+  title: 'WagSave',
+  description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.',
+  openGraph: {
+    title: 'WagSave — Unity Save System',
+    description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset.',
+    images: [{ url: '/brand/wagsave/CardImage.png', width: 1072, height: 603, alt: 'WagSave' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WagSave — Unity Save System',
+    description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset.',
+    images: ['/brand/wagsave/CardImage.png'],
+  },
+};
 
 const plugin = content.plugins.find(p => p.slug === 'wagsave')!;
 
