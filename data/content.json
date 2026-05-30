@@ -7,6 +7,8 @@
       "status": "In production",
       "tags": ["Action", "RPG", "Sci-fi"],
       "platforms": "PC · Mac",
+      "price": null,
+      "buyLinks": [],
       "cta": "Dev log →",
       "href": "/games",
       "featured": false,
@@ -26,6 +28,9 @@
         { "label": "Unity", "tone": "neutral" }
       ],
       "price": "$29.99",
+      "buyLinks": [
+        { "store": "Fab (Epic Store)", "href": "https://fab.com/s/c8ce36b183fd" }
+      ],
       "externalLink": "https://assetstore.unity.com/packages/slug/362364",
       "free": false,
       "featured": true,

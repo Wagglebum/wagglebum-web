@@ -37,7 +37,13 @@ export default function WagSavePage() {
           A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.
         </p>
         <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-          <Button href={plugin.externalLink} size="lg">Buy — {plugin.price} →</Button>
+          {plugin.buyLinks && plugin.buyLinks.length > 0 ? (
+            plugin.buyLinks.map(link => (
+              <Button key={link.store} href={link.href} size="lg">Buy on {link.store} — {plugin.price} →</Button>
+            ))
+          ) : (
+            <Button href={plugin.externalLink} size="lg">Buy — {plugin.price} →</Button>
+          )}
         </div>
       </section>
 
@@ -136,7 +142,7 @@ export default function WagSavePage() {
             {
               name: 'Standard', price: plugin.price, sub: 'one-time', desc: 'For any dev, any team size.',
               items: ['All features', 'Best-effort support for bugs and feature requests'],
-              featured: true, cta: 'Buy now →', variant: 'primary' as const, href: plugin.externalLink,
+              featured: true, buyLinks: plugin.buyLinks, variant: 'primary' as const, href: plugin.externalLink,
             },
             {
               name: 'Source', price: 'Talk', sub: 'to us', desc: 'Source access & royalty-free distribution.',
@@ -155,7 +161,15 @@ export default function WagSavePage() {
                   <li key={i} className="relative pl-5 text-[14px] text-fg-muted before:absolute before:left-0 before:font-black before:text-ok before:content-['✓']">{i}</li>
                 ))}
               </ul>
-              <Button href={t.href} variant={t.variant} className="mt-auto">{t.cta}</Button>
+              {'buyLinks' in t && t.buyLinks && t.buyLinks.length > 0 ? (
+                <div className="mt-auto flex flex-col gap-2">
+                  {t.buyLinks.map(link => (
+                    <Button key={link.store} href={link.href} variant={t.variant}>Buy on {link.store} →</Button>
+                  ))}
+                </div>
+              ) : (
+                <Button href={t.href!} variant={t.variant} className="mt-auto">{(t as {cta: string}).cta}</Button>
+              )}
             </div>
           ))}
         </div>
