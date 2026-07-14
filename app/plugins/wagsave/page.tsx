@@ -36,13 +36,16 @@ export default function WagSavePage() {
         <p className="mx-auto mt-4 max-w-[580px] text-[20px] leading-relaxed text-fg-muted">
           A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.
         </p>
-        <div className="mt-7 flex flex-wrap justify-center gap-2.5">
+        <div className="mt-7 text-[40px] font-black leading-none tracking-[-0.02em]">
+          {plugin.price}<span className="ml-2 align-middle text-[16px] font-semibold text-fg-muted">one-time purchase</span>
+        </div>
+        <div className="mt-3 flex flex-wrap justify-center gap-2.5">
           {plugin.buyLinks && plugin.buyLinks.length > 0 ? (
             plugin.buyLinks.map(link => (
-              <Button key={link.store} href={link.href} size="lg">Buy on {link.store} — {plugin.price} →</Button>
+              <Button key={link.store} href={link.href} size="lg">Buy on {link.store} →</Button>
             ))
           ) : (
-            <Button href={plugin.externalLink} size="lg">Buy — {plugin.price} →</Button>
+            <Button href={plugin.externalLink} size="lg">Buy →</Button>
           )}
         </div>
       </section>

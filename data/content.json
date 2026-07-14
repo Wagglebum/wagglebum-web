@@ -27,8 +27,9 @@
         { "label": "New · v1.0", "tone": "blush" },
         { "label": "Unity", "tone": "neutral" }
       ],
-      "price": "$29.99",
+      "price": "$19.99",
       "buyLinks": [
+        { "store": "Unity Asset Store", "href": "https://assetstore.unity.com/packages/slug/362364" },
         { "store": "Fab (Epic Store)", "href": "https://fab.com/s/c8ce36b183fd" }
       ],
       "externalLink": "https://assetstore.unity.com/packages/slug/362364",
