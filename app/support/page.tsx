@@ -2,7 +2,7 @@ import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
 export const metadata = {
   title: 'Support',
-  description: 'Get help with WagSave or any Wagglebum game. Bug reports, licensing questions, and general support.',
+  description: 'Get help with WagSave, WagSettings or any Wagglebum game. Bug reports, licensing questions, and general support.',
 };
 
 const topics = [
@@ -14,7 +14,7 @@ const topics = [
   {
     icon: '🔌',
     title: 'Plugins & tools',
-    body: 'WagSave integration questions, licensing, Unity version compatibility, or unexpected behavior in your project.',
+    body: 'WagSave and WagSettings integration questions, licensing, Unity version compatibility, or unexpected behavior in your project.',
   },
   {
     icon: '🧾',

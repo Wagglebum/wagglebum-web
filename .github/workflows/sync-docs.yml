@@ -3,17 +3,18 @@ name: Sync Docs
 on:
   workflow_dispatch:
 
-# Directory mapping between the private docs repo and this repo.
-# SOURCE_DIR_* paths are relative to the root of the private docs repo.
-# TARGET_DIR_* paths are relative to the root of this repo.
+# Each documentation section is copied from a private package repository into content/docs/<id>,
+# and that section's Images folder into public/docs-assets/<id>/Images, which is where the docs
+# renderer points relative image links. Unity .meta files are not copied.
 #
-# To add a third mapping: add SOURCE_DIR_3 and TARGET_DIR_3 here,
-# then add a matching "Copy section N" step in the sync job below.
+# Secrets: DOCS_REPO_PAT (a token that can read every repo below), DOCS_REPO (WagSave, e.g.
+# WaggleBum/wagsave-unity) and WAGSETTINGS_REPO (e.g. WaggleBum/wagsettings-unity).
+#
+# To add a section: check out its repo, add a "Copy" step for it, and list it in config/docs.ts.
 env:
-  SOURCE_DIR_1: WaggleBum/WagSave/Docs
-  TARGET_DIR_1: content/docs/guide
-  SOURCE_DIR_2: WaggleBum/WagSave/Core/Docs
-  TARGET_DIR_2: content/docs/api
+  WAGSAVE_DOCS: _wagsave/WaggleBum/WagSave/Docs
+  WAGSAVE_API_DOCS: _wagsave/WaggleBum/WagSave/Core/Docs
+  WAGSETTINGS_DOCS: _wagsettings/WaggleBum/WagSettings/Docs
 
 jobs:
   sync:
@@ -25,46 +26,56 @@ jobs:
         with:
           token: ${{ secrets.DOCS_REPO_PAT }}
 
-      - name: Check out private docs repo
+      - name: Check out wagsave-unity
         uses: actions/checkout@v4
         with:
           repository: ${{ secrets.DOCS_REPO }}
           token: ${{ secrets.DOCS_REPO_PAT }}
-          path: _docs-source
+          path: _wagsave
 
-      # Show the top two levels of the private repo so path problems are obvious
+      - name: Check out wagsettings-unity
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ secrets.WAGSETTINGS_REPO }}
+          token: ${{ secrets.DOCS_REPO_PAT }}
+          path: _wagsettings
+
+      # Show the top levels of each private repo so path problems are obvious
       - name: List private repo structure
-        run: find _docs-source -maxdepth 3 -type d | sort
+        run: find _wagsave _wagsettings -maxdepth 3 -type d | sort
 
-      # Copy section 1
-      - name: Copy ${{ env.SOURCE_DIR_1 }}
+      - name: Copy WagSave docs → content/docs/guide
         run: |
-          mkdir -p "${{ env.TARGET_DIR_1 }}"
-          rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_1 }}/" "${{ env.TARGET_DIR_1 }}/"
+          mkdir -p content/docs/guide public/docs-assets/guide
+          rsync -av --delete --exclude '*.meta' --exclude 'Images/' "$WAGSAVE_DOCS/" content/docs/guide/
+          if [ -d "$WAGSAVE_DOCS/Images" ]; then
+            rsync -av --delete --exclude '*.meta' "$WAGSAVE_DOCS/Images/" public/docs-assets/guide/Images/
+          fi
 
-      # Copy section 2
-      - name: Copy ${{ env.SOURCE_DIR_2 }}
+      - name: Copy WagSave core docs → content/docs/api
         run: |
-          mkdir -p "${{ env.TARGET_DIR_2 }}"
-          rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_2 }}/" "${{ env.TARGET_DIR_2 }}/"
+          mkdir -p content/docs/api
+          rsync -av --delete --exclude '*.meta' "$WAGSAVE_API_DOCS/" content/docs/api/
 
-      # To add a third mapping, duplicate the step above and change the index:
-      # - name: Copy ${{ env.SOURCE_DIR_3 }}
-      #   run: |
-      #     mkdir -p "${{ env.TARGET_DIR_3 }}"
-      #     rsync -av --delete "_docs-source/${{ env.SOURCE_DIR_3 }}/" "${{ env.TARGET_DIR_3 }}/"
+      - name: Copy WagSettings docs → content/docs/wagsettings
+        run: |
+          mkdir -p content/docs/wagsettings public/docs-assets/wagsettings
+          rsync -av --delete --exclude '*.meta' --exclude 'Images/' "$WAGSETTINGS_DOCS/" content/docs/wagsettings/
+          if [ -d "$WAGSETTINGS_DOCS/Images" ]; then
+            rsync -av --delete --exclude '*.meta' "$WAGSETTINGS_DOCS/Images/" public/docs-assets/wagsettings/Images/
+          fi
 
-      - name: Remove temporary docs checkout
-        run: rm -rf _docs-source
+      - name: Remove temporary checkouts
+        run: rm -rf _wagsave _wagsettings
 
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/
+          git add content/ public/docs-assets/
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "docs: sync from private repo [skip ci]"
+            git commit -m "docs: sync from package repos [skip ci]"
             git push
           fi

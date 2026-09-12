@@ -23,6 +23,24 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Documentation sections
+
+The docs under `/docs` are copied from the package repositories by the **Sync Docs** workflow
+(`.github/workflows/sync-docs.yml`, run by hand from the Actions tab):
+
+| Section | Source | Content | Images |
+|---|---|---|---|
+| `guide` | wagsave-unity `WaggleBum/WagSave/Docs` | `content/docs/guide` | `public/docs-assets/guide/Images` |
+| `api` | wagsave-unity `WaggleBum/WagSave/Core/Docs` | `content/docs/api` | — |
+| `wagsettings` | wagsettings-unity `WaggleBum/WagSettings/Docs` | `content/docs/wagsettings` | `public/docs-assets/wagsettings/Images` |
+
+Sections are declared in `config/docs.ts`. Pages may sit one folder down (`Settings/Audio.md` is
+`/docs/wagsettings/Settings/Audio`); the sidebar groups them under the folder name and orders pages
+the way the section's `index.md` links them. Relative image links are rewritten to the section's
+`docs-assets` folder. Translated copies (`es/`, `ja/`, …) are synced but not served yet.
+
+The workflow needs the secrets `DOCS_REPO_PAT`, `DOCS_REPO` (WagSave) and `WAGSETTINGS_REPO`.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

@@ -45,7 +45,7 @@ export default async function WagSaveSupportPage() {
           <div className="ml-auto flex gap-1">
             {[
               { label: 'Overview', href: '/plugins/wagsave' },
-              { label: 'Docs', href: '#' },
+              { label: 'Docs', href: '/docs/guide/index' },
               { label: 'Changelog', href: '#' },
               { label: 'Support', href: '/plugins/wagsave/support', active: true },
             ].map(t => (

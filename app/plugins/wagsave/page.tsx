@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { NavBar, Footer, Button, Eyebrow } from '@/components/wagglebum';
 import { VimeoEmbed } from '@/components/VimeoEmbed';
-import content from '@/data/content.json';
+import { pluginBySlug } from '@/lib/content';
 
 export const metadata = {
   title: 'WagSave',
@@ -20,7 +20,7 @@ export const metadata = {
   },
 };
 
-const plugin = content.plugins.find(p => p.slug === 'wagsave')!;
+const plugin = pluginBySlug('wagsave');
 
 export default function WagSavePage() {
   return (

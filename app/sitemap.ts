@@ -13,6 +13,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/about`,                priority: 0.5,  changeFrequency: 'monthly' },
     { url: `${BASE}/support`,              priority: 0.6,  changeFrequency: 'monthly' },
     { url: `${BASE}/plugins/wagsave/support`, priority: 0.6, changeFrequency: 'weekly' },
+    { url: `${BASE}/plugins/wagsettings`,  priority: 0.9,  changeFrequency: 'weekly' },
+    { url: `${BASE}/plugins/wagsettings/support`, priority: 0.6, changeFrequency: 'weekly' },
   ];
 
   const docRoutes: MetadataRoute.Sitemap = getAllDocSlugs()

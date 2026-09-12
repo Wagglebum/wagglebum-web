@@ -5,7 +5,11 @@
       "title": "Sweepers",
       "description": "Your mission..sweep up after the battle has ended.",
       "status": "In production",
-      "tags": ["Action", "RPG", "Sci-fi"],
+      "tags": [
+        "Action",
+        "RPG",
+        "Sci-fi"
+      ],
       "platforms": "PC · Mac",
       "price": null,
       "buyLinks": [],
@@ -24,13 +28,25 @@
       "title": "WagSave",
       "body": "Save games without the boilerplate. Cloud sync, migrations, undo, encryption. The last save system you'll add.",
       "tags": [
-        { "label": "New · v1.0", "tone": "blush" },
-        { "label": "Unity", "tone": "neutral" }
+        {
+          "label": "New · v1.0",
+          "tone": "blush"
+        },
+        {
+          "label": "Unity",
+          "tone": "neutral"
+        }
       ],
       "price": "$19.99",
       "buyLinks": [
-        { "store": "Unity Asset Store", "href": "https://assetstore.unity.com/packages/slug/362364" },
-        { "store": "Fab (Epic Store)", "href": "https://fab.com/s/c8ce36b183fd" }
+        {
+          "store": "Unity Asset Store",
+          "href": "https://assetstore.unity.com/packages/slug/362364"
+        },
+        {
+          "store": "Fab (Epic Store)",
+          "href": "https://fab.com/s/c8ce36b183fd"
+        }
       ],
       "externalLink": "https://assetstore.unity.com/packages/slug/362364",
       "free": false,
@@ -40,7 +56,35 @@
       "href": "/plugins/wagsave",
       "icon": "W",
       "logo": "/brand/wagsave/Logo.png",
-      "vimeoUrl": "https://vimeo.com/1194213436"
+      "vimeoUrl": "https://vimeo.com/1194213436",
+      "hero": "/brand/wagsave/CardImage.png"
+    },
+    {
+      "slug": "wagsettings",
+      "title": "WagSettings",
+      "body": "A settings and options menu without the boilerplate. Audio, display, graphics, rebinding and accessibility, generated from one screen. Saves through WagSave when it's there.",
+      "tags": [
+        {
+          "label": "Coming soon · v0.9",
+          "tone": "blush"
+        },
+        {
+          "label": "Unity",
+          "tone": "neutral"
+        }
+      ],
+      "price": "Coming soon",
+      "buyLinks": [],
+      "externalLink": "",
+      "free": false,
+      "featured": false,
+      "new": true,
+      "cta": "Learn more →",
+      "href": "/plugins/wagsettings",
+      "icon": "S",
+      "logo": "/brand/wagsettings/Logo.png",
+      "hero": "",
+      "vimeoUrl": ""
     }
   ]
 }

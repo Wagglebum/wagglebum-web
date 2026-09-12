@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { docSources } from '@/config/docs';
+import { getSlugsForSource, titleOf } from '@/lib/docs';
 import content from '@/data/content.json';
 
 export interface SearchResult {
@@ -10,11 +11,6 @@ export interface SearchResult {
   type: 'doc' | 'plugin' | 'game' | 'page';
   excerpt: string;
   url: string;
-}
-
-function extractTitle(markdown: string, fallback: string): string {
-  const match = markdown.match(/^#\s+(.+)/m);
-  return match ? match[1].trim() : fallback;
 }
 
 function extractExcerpt(markdown: string, maxLen = 140): string {
@@ -34,14 +30,12 @@ export function buildSearchIndex(): SearchResult[] {
 
   for (const source of docSources) {
     const dir = path.join(process.cwd(), source.contentDir);
-    if (!fs.existsSync(dir)) continue;
-    for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.md'))) {
-      const slug = file.replace(/\.md$/, '');
-      const raw = fs.readFileSync(path.join(dir, file), 'utf8');
+    for (const slug of getSlugsForSource(source)) {
+      const raw = fs.readFileSync(path.join(dir, `${slug}.md`), 'utf8');
       const { data, content: body } = matter(raw);
       items.push({
         id: `doc-${source.id}-${slug}`,
-        title: data.title ?? extractTitle(body, slug),
+        title: `${source.label} · ${titleOf(data, body, slug)}`,
         type: 'doc',
         excerpt: extractExcerpt(body),
         url: `/docs/${source.id}/${slug}`,
@@ -72,7 +66,7 @@ export function buildSearchIndex(): SearchResult[] {
 
   items.push(
     { id: 'page-about',   title: 'About',   type: 'page', excerpt: 'Learn about Wagglebum — who we are and what we make.', url: '/about' },
-    { id: 'page-support', title: 'Support', type: 'page', excerpt: 'Get help with WagSave or any Wagglebum product.',        url: '/support' },
+    { id: 'page-support', title: 'Support', type: 'page', excerpt: 'Get help with WagSave, WagSettings or any Wagglebum product.',        url: '/support' },
   );
 
   return items;
