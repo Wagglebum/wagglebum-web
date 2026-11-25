@@ -26,7 +26,75 @@
     {
       "slug": "wagsave",
       "title": "WagSave",
-      "body": "Save games without the boilerplate. Cloud sync, migrations, undo, encryption. The last save system you'll add.",
+      "body": "A complete Unity save game system, free. Multiple formats, encryption, compression, cloud save, save slots, autosave, and a full Editor toolset.",
+      "tags": [
+        {
+          "label": "Free",
+          "tone": "ok"
+        },
+        {
+          "label": "Unity",
+          "tone": "neutral"
+        }
+      ],
+      "price": "Free",
+      "buyLinks": [
+        {
+          "store": "Unity Asset Store",
+          "href": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-save-game-system-362364"
+        },
+        {
+          "store": "Fab (Epic Store)",
+          "href": "https://fab.com/s/c8ce36b183fd"
+        }
+      ],
+      "externalLink": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-save-game-system-362364",
+      "free": true,
+      "featured": true,
+      "new": false,
+      "cta": "Learn more →",
+      "href": "/plugins/wagsave",
+      "icon": "W",
+      "logo": "/brand/wagsave/Logo.png",
+      "vimeoUrl": "https://vimeo.com/1208296635",
+      "hero": "/brand/wagsave/CardImage.png"
+    },
+    {
+      "slug": "wagsave-pro",
+      "title": "WagSave Pro",
+      "body": "Everything in WagSave, plus the complete source code of the core save system. Step through it, review it, change it, or use it outside Unity.",
+      "tags": [
+        {
+          "label": "New · v1.1",
+          "tone": "blush"
+        },
+        {
+          "label": "Unity",
+          "tone": "neutral"
+        }
+      ],
+      "price": "$4.99",
+      "buyLinks": [
+        {
+          "store": "Unity Asset Store",
+          "href": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-pro-save-game-system-419162"
+        }
+      ],
+      "externalLink": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-pro-save-game-system-419162",
+      "free": false,
+      "featured": false,
+      "new": true,
+      "cta": "Learn more →",
+      "href": "/plugins/wagsave-pro",
+      "icon": "P",
+      "logo": "/brand/wagsave-pro/Logo.png",
+      "vimeoUrl": "https://vimeo.com/1208296635",
+      "hero": "/brand/wagsave-pro/CardImage.jpg"
+    },
+    {
+      "slug": "wagsettings",
+      "title": "WagSettings",
+      "body": "A complete settings and options menu: language, audio, display, graphics, controls and accessibility. One-screen setup generates a working, saving, gamepad-ready menu.",
       "tags": [
         {
           "label": "New · v1.0",
@@ -37,45 +105,14 @@
           "tone": "neutral"
         }
       ],
-      "price": "$19.99",
+      "price": "$4.99",
       "buyLinks": [
         {
           "store": "Unity Asset Store",
-          "href": "https://assetstore.unity.com/packages/slug/362364"
-        },
-        {
-          "store": "Fab (Epic Store)",
-          "href": "https://fab.com/s/c8ce36b183fd"
+          "href": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsettings-game-settings-system-407442"
         }
       ],
-      "externalLink": "https://assetstore.unity.com/packages/slug/362364",
-      "free": false,
-      "featured": true,
-      "new": true,
-      "cta": "Learn more →",
-      "href": "/plugins/wagsave",
-      "icon": "W",
-      "logo": "/brand/wagsave/Logo.png",
-      "vimeoUrl": "https://vimeo.com/1194213436",
-      "hero": "/brand/wagsave/CardImage.png"
-    },
-    {
-      "slug": "wagsettings",
-      "title": "WagSettings",
-      "body": "A settings and options menu without the boilerplate. Audio, display, graphics, rebinding and accessibility, generated from one screen. Saves through WagSave when it's there.",
-      "tags": [
-        {
-          "label": "Coming soon · v0.9",
-          "tone": "blush"
-        },
-        {
-          "label": "Unity",
-          "tone": "neutral"
-        }
-      ],
-      "price": "Coming soon",
-      "buyLinks": [],
-      "externalLink": "",
+      "externalLink": "https://assetstore.unity.com/packages/tools/game-toolkits/wagsettings-game-settings-system-407442",
       "free": false,
       "featured": false,
       "new": true,
@@ -83,7 +120,7 @@
       "href": "/plugins/wagsettings",
       "icon": "S",
       "logo": "/brand/wagsettings/Logo.png",
-      "hero": "",
+      "hero": "/brand/wagsettings/CardImage.jpg",
       "vimeoUrl": ""
     }
   ]

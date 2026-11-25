@@ -110,7 +110,7 @@ export default function Home() {
               </div>
               <div className="flex items-center gap-1.5">
                 {plugin.tags.map(t => (
-                  <Tag key={t.label} tone={t.tone as 'neutral' | 'blush'}>{t.label}</Tag>
+                  <Tag key={t.label} tone={t.tone as 'neutral' | 'blush' | 'ok'}>{t.label}</Tag>
                 ))}
               </div>
               <span className="font-bold text-ink">→</span>

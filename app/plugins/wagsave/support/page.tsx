@@ -4,7 +4,7 @@ import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
 export const metadata = {
   title: 'WagSave Support',
-  description: 'Get help with WagSave — bug reports, Unity version compatibility, licensing questions, and documentation.',
+  description: 'Get help with WagSave and WagSave Pro — bug reports, Unity version compatibility, licensing questions, and documentation.',
 };
 
 async function getIssues(): Promise<{ id: number; number: number; title: string; html_url: string; state: string; user: { login: string } }[]> {
@@ -45,6 +45,7 @@ export default async function WagSaveSupportPage() {
           <div className="ml-auto flex gap-1">
             {[
               { label: 'Overview', href: '/plugins/wagsave' },
+              { label: 'Pro', href: '/plugins/wagsave-pro' },
               { label: 'Docs', href: '/docs/guide/index' },
               { label: 'Changelog', href: '#' },
               { label: 'Support', href: '/plugins/wagsave/support', active: true },
@@ -63,7 +64,7 @@ export default async function WagSaveSupportPage() {
 
       {/* Page hero */}
       <section className="mx-auto max-w-[1100px] px-6 pb-4 pt-10">
-        <Eyebrow>WagSave support</Eyebrow>
+        <Eyebrow>WagSave &amp; WagSave Pro support</Eyebrow>
         <h1 className="mt-3 text-[48px] font-black leading-tight tracking-[-0.025em]">We&apos;ll help you get saved.</h1>
         <p className="mt-2.5 max-w-[560px] text-[17px] text-fg-muted">
           Real humans answer within 48h. In the meantime, here are the answers to the 20 questions we get most.
@@ -120,7 +121,7 @@ export default async function WagSaveSupportPage() {
 
           <h2 className="mb-2.5 mt-7 text-[22px] font-extrabold tracking-tight">Option 1 · Asset Store (recommended)</h2>
           <ol className="mb-4 flex flex-col gap-1.5 pl-5 text-[16px] leading-[1.7] text-fg-muted">
-            <li>Buy WagSave from the <Link href="#" className="font-bold text-ink">Unity Asset Store</Link>.</li>
+            <li>Get <Link href="https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-save-game-system-362364" className="font-bold text-ink">WagSave</Link> (free) or <Link href="https://assetstore.unity.com/packages/tools/game-toolkits/wagsave-pro-save-game-system-419162" className="font-bold text-ink">WagSave Pro</Link> from the Unity Asset Store.</li>
             <li>Open <strong className="font-bold text-ink">Window → Package Manager</strong> in Unity.</li>
             <li>Switch the dropdown to <strong className="font-bold text-ink">My Assets</strong> and click <strong className="font-bold text-ink">Download</strong>, then <strong className="font-bold text-ink">Import</strong>.</li>
             <li>When prompted, import the whole package. You can remove the <code className="rounded bg-bone px-1.5 py-0.5 font-mono text-[13px]">Samples/</code> folder later if you don&apos;t need it.</li>

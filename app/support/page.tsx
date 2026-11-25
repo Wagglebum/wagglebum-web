@@ -2,7 +2,7 @@ import { NavBar, Footer, Eyebrow, Button } from '@/components/wagglebum';
 
 export const metadata = {
   title: 'Support',
-  description: 'Get help with WagSave, WagSettings or any Wagglebum game. Bug reports, licensing questions, and general support.',
+  description: 'Get help with WagSave, WagSave Pro, WagSettings or any Wagglebum game. Bug reports, licensing questions, and general support.',
 };
 
 const topics = [
@@ -14,7 +14,7 @@ const topics = [
   {
     icon: '🔌',
     title: 'Plugins & tools',
-    body: 'WagSave and WagSettings integration questions, licensing, Unity version compatibility, or unexpected behavior in your project.',
+    body: 'WagSave, WagSave Pro and WagSettings integration questions, licensing, Unity version compatibility, or unexpected behavior in your project.',
   },
   {
     icon: '🧾',
@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: 'Is there a community forum or Discord?',
-    a: 'Studio-tier WagSave customers get access to a private Discord channel. For everyone else, email is the fastest path to us.',
+    a: 'Not yet. Email is the fastest path to us.',
   },
 ];
 

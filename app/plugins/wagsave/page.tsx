@@ -5,22 +5,23 @@ import { pluginBySlug } from '@/lib/content';
 
 export const metadata = {
   title: 'WagSave',
-  description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.',
+  description: 'A free, production-ready save system for Unity 2022.3+. Multiple formats, encryption, cloud save, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.',
   openGraph: {
-    title: 'WagSave — Unity Save System',
-    description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset.',
+    title: 'WagSave — Free Unity Save System',
+    description: 'A free, production-ready save system for Unity 2022.3+. Multiple formats, encryption, cloud save, multi-slot support, autosave, and a full Editor toolset.',
     images: [{ url: '/brand/wagsave/CardImage.png', width: 1072, height: 603, alt: 'WagSave' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'WagSave — Unity Save System',
-    description: 'A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset.',
+    title: 'WagSave — Free Unity Save System',
+    description: 'A free, production-ready save system for Unity 2022.3+. Multiple formats, encryption, cloud save, multi-slot support, autosave, and a full Editor toolset.',
     images: ['/brand/wagsave/CardImage.png'],
   },
 };
 
 const plugin = pluginBySlug('wagsave');
+const pro = pluginBySlug('wagsave-pro');
 
 export default function WagSavePage() {
   return (
@@ -34,26 +35,24 @@ export default function WagSavePage() {
         </div>
 <h1 className="mt-4 text-[72px] font-black leading-none tracking-[-0.03em]">WagSave</h1>
         <p className="mx-auto mt-4 max-w-[580px] text-[20px] leading-relaxed text-fg-muted">
-          A production-ready save system for Unity 2022.3+. Multiple formats, cloud sync, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.
+          A free, production-ready save system for Unity 2022.3+. Multiple formats, encryption, cloud save, multi-slot support, autosave, and a full Editor toolset — drop it in and never write save code again.
         </p>
         <div className="mt-7 text-[40px] font-black leading-none tracking-[-0.02em]">
-          {plugin.price}<span className="ml-2 align-middle text-[16px] font-semibold text-fg-muted">one-time purchase</span>
+          {plugin.price}<span className="ml-2 align-middle text-[16px] font-semibold text-fg-muted">every feature included</span>
         </div>
         <div className="mt-3 flex flex-wrap justify-center gap-2.5">
-          {plugin.buyLinks && plugin.buyLinks.length > 0 ? (
-            plugin.buyLinks.map(link => (
-              <Button key={link.store} href={link.href} size="lg">Buy on {link.store} →</Button>
-            ))
-          ) : (
-            <Button href={plugin.externalLink} size="lg">Buy →</Button>
-          )}
+          {plugin.buyLinks.map(link => (
+            <Button key={link.store} href={link.href} size="lg">Get it on {link.store} →</Button>
+          ))}
+          <Button href={pro.href} variant="ghost" size="lg">Want the source? See Pro</Button>
         </div>
       </section>
 
       {/* Price strip */}
       <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-8 px-6 py-5 text-[14px] font-semibold text-fg-muted">
         <div><strong className="font-extrabold text-ink">Unity 2022.3+</strong> · 2023 · 6</div>
-        <div><strong className="font-extrabold text-ink">One-time</strong> · no subscription</div>
+        <div><strong className="font-extrabold text-ink">Free</strong> · no subscription</div>
+        <div><strong className="font-extrabold text-ink">Six languages</strong> · editor and docs</div>
       </div>
 
       {/* Card / hero image */}
@@ -81,8 +80,8 @@ export default function WagSavePage() {
         <p className="mx-auto mt-2.5 max-w-[480px] text-[17px] text-fg-muted">Everything the engine should have shipped with.</p>
         <div className="mt-9 grid grid-cols-1 gap-[18px] text-left md:grid-cols-3">
           {[
-            { num: '01', title: 'Multiple save formats', body: 'Binary, JSON, Text, and PlayerPrefs out of the box. Switch formats without changing your game code.' },
-            { num: '02', title: 'Cloud save', body: 'Unity Cloud Save and Steam Cloud Save supported. Both are conditionally compiled — only active when the SDK is present.' },
+            { num: '01', title: 'Multiple save formats', body: 'Binary, JSON, Text, and PlayerPrefs out of the box. Indexed variants read single values without loading the whole file. Switch formats without changing your game code.' },
+            { num: '02', title: 'Cloud save', body: 'Sync saves to Unity’s hosted cloud backend. Optional — it only activates when Unity Gaming Services is in your project.' },
             { num: '03', title: 'Save slots', body: 'Full multi-slot support so players can keep independent saves. Includes a ready-to-use slot selection UI you can customize.' },
             { num: '04', title: 'Autosave', body: 'Interval-based and event-driven autosave, configured visually in the Editor. No code required.' },
             { num: '05', title: 'Encryption, compression & signing', body: 'Composable per-profile: protect files from tampering, shrink them on disk, or sign them to detect corruption.' },
@@ -103,20 +102,17 @@ export default function WagSavePage() {
           <Eyebrow>Getting started</Eyebrow>
           <h2 className="mt-3 text-[36px] font-black leading-tight tracking-[-0.02em]">Two calls. That&apos;s just the start</h2>
           <p className="mt-3 text-[16px] leading-relaxed text-fg-muted">
-            Drop the package in, configure your save profile in the Editor, then call <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Save()</code> and <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Load()</code>. Format, cloud, and encryption are all set from the inspector.
+            Drop the package in, configure your save profile in the Editor, then save and load any value with <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Save()</code> and <code className="rounded-md bg-bone px-1.5 py-0.5 font-mono text-sm">WagSave.Load()</code>. Format, cloud, and encryption are all set from the inspector.
           </p>
         </div>
         <pre className="overflow-x-auto rounded-[16px] bg-ink p-5 font-mono text-[13px] leading-relaxed text-snow shadow-md">
-          <span className="text-stone">{'// 1. Define your save data'}</span>{'\n'}
-          <span className="text-blush-100">{'public class'}</span>{' MySaveData {\n'}
-          {'  '}<span className="text-blush-100">{'public int'}</span>{' level;\n'}
-          {'  '}<span className="text-blush-100">{'public float'}</span>{' timePlayed;\n'}
-          {'  '}<span className="text-blush-100">{'public'}</span>{' List<string> unlockedItems;\n'}{'}'}
-          {'\n\n'}
-          <span className="text-stone">{'// 2. Save and load — that\'s it'}</span>{'\n'}
-          {'using WaggleBum.WagSave;\n\n'}
-          {'WagSave.Save(saveData);\n'}
-          <span className="text-blush-100">{'var'}</span>{' data = WagSave.Load<MySaveData>();'}
+          <span className="text-blush-100">{'using'}</span>{' WaggleBum.WagSave;\n\n'}
+          <span className="text-stone">{'// Save'}</span>{'\n'}
+          {'WagSave.Save('}<span className="text-[#b2d8b2]">{'"currentLevel"'}</span>{', 5);\n'}
+          {'WagSave.Save('}<span className="text-[#b2d8b2]">{'"playerName"'}</span>{', '}<span className="text-[#b2d8b2]">{'"Alex"'}</span>{');\n\n'}
+          <span className="text-stone">{'// Load'}</span>{'\n'}
+          <span className="text-blush-100">{'int'}</span>{' level = WagSave.Load<'}<span className="text-blush-100">{'int'}</span>{'>('}<span className="text-[#b2d8b2]">{'"currentLevel"'}</span>{');\n'}
+          <span className="text-blush-100">{'string'}</span>{' name = WagSave.Load<'}<span className="text-blush-100">{'string'}</span>{'>('}<span className="text-[#b2d8b2]">{'"playerName"'}</span>{');'}
         </pre>
       </section>
 
@@ -139,18 +135,18 @@ export default function WagSavePage() {
       {/* Pricing */}
       <section className="mx-auto max-w-[1100px] px-6 pb-14 text-center">
         <Eyebrow>Pricing</Eyebrow>
-        <h2 className="mt-3 text-[40px] font-black tracking-[-0.025em]">Buy once. Own it.</h2>
+        <h2 className="mt-3 text-[40px] font-black tracking-[-0.025em]">Free. Or free plus the source.</h2>
         <div className="mt-9 flex flex-wrap justify-center gap-[18px] text-left">
           {[
             {
-              name: 'Standard', price: plugin.price, sub: 'one-time', desc: 'For any dev, any team size.',
-              items: ['All features', 'Best-effort support for bugs and feature requests'],
-              featured: true, buyLinks: plugin.buyLinks, variant: 'primary' as const, href: plugin.externalLink,
+              name: 'WagSave', price: plugin.price, sub: 'all features', desc: 'For any dev, any team size.',
+              items: ['All features, editor tools and save formats', 'Core save library as a precompiled DLL', 'Best-effort support for bugs and feature requests'],
+              featured: true, buyLinks: plugin.buyLinks, action: 'Get it', variant: 'primary' as const,
             },
             {
-              name: 'Source', price: 'Talk', sub: 'to us', desc: 'Source access & royalty-free distribution.',
-              items: ['Full source code', 'Custom SLA'],
-              featured: false, cta: 'Get in touch →', variant: 'ghost' as const, href: '/support',
+              name: 'WagSave Pro', price: pro.price, sub: 'one-time', desc: 'The same WagSave, with the core as source.',
+              items: ['Everything in WagSave', 'Complete source of the core save system', 'Debug, review and change it yourself'],
+              featured: false, buyLinks: pro.buyLinks, action: 'Buy', variant: 'secondary' as const,
             },
           ].map(t => (
             <div key={t.name} className={`w-full max-w-[340px] flex flex-col gap-3.5 rounded-[20px] p-7 ${t.featured ? 'border-2 border-ink bg-snow shadow-pop' : 'border border-border bg-snow shadow-sm'}`}>
@@ -164,15 +160,11 @@ export default function WagSavePage() {
                   <li key={i} className="relative pl-5 text-[14px] text-fg-muted before:absolute before:left-0 before:font-black before:text-ok before:content-['✓']">{i}</li>
                 ))}
               </ul>
-              {'buyLinks' in t && t.buyLinks && t.buyLinks.length > 0 ? (
-                <div className="mt-auto flex flex-col gap-2">
-                  {t.buyLinks.map(link => (
-                    <Button key={link.store} href={link.href} variant={t.variant}>Buy on {link.store} →</Button>
-                  ))}
-                </div>
-              ) : (
-                <Button href={t.href!} variant={t.variant} className="mt-auto">{(t as {cta: string}).cta}</Button>
-              )}
+              <div className="mt-auto flex flex-col gap-2">
+                {t.buyLinks.map(link => (
+                  <Button key={link.store} href={link.href} variant={t.variant}>{t.action} on {link.store} →</Button>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -189,11 +181,11 @@ export default function WagSavePage() {
             },
             {
               q: 'Which platforms does WagSave run on?',
-              a: 'Desktop (Windows, macOS, Linux), mobile (iOS, Android), WebGL, and console. Cloud save is available via Unity Gaming Services and Steam — both are optional and only activate if the SDK is present in your project.',
+              a: 'Desktop (Windows, macOS, Linux), mobile (iOS, Android), WebGL, and console. Cloud save is available via Unity Gaming Services — it is optional and only activates if the SDK is present in your project.',
             },
             {
-              q: 'Do I need Steamworks or Unity Gaming Services to use WagSave?',
-              a: 'No — both are entirely optional. If the SDK is not in your project, those cloud formats are automatically disabled and will not appear in the Editor. Everything else works without them.',
+              q: 'Do I need Unity Gaming Services to use WagSave?',
+              a: 'No — it is entirely optional. If the SDK is not in your project, the cloud format is automatically disabled and will not appear in the Editor. Everything else works without them.',
             },
             {
               q: 'Can I use multiple save formats in the same project?',
@@ -208,8 +200,16 @@ export default function WagSavePage() {
               a: 'WagSave includes an extensive logging system and Editor debug views for inspecting save state, slot contents, and serializer output. You can also simulate save and load operations directly from the Editor without entering Play Mode.',
             },
             {
-              q: 'Is this really a one-time purchase?',
-              a: "Yes. Buy once, own it forever. We think subscriptions for dev tools are silly.",
+              q: 'Is WagSave really free?',
+              a: 'Yes. Every feature, editor tool and save format is in the free edition. If you also want the source of the core save system, that is WagSave Pro: a one-time purchase, no subscription.',
+            },
+            {
+              q: 'What does WagSave Pro add?',
+              a: 'The complete source code of WagSave Core, the library that handles serialization, save files, encryption, compression, signing and save slots. The free edition ships it as a precompiled DLL. Features and save formats are the same in both.',
+            },
+            {
+              q: 'Can I move to Pro later?',
+              a: 'Yes. Both editions use the same namespaces, class names, asset GUIDs and save-file formats, so your scenes, WagSave assets and existing save files keep working. Remove WagSave first; the two editions cannot be installed together.',
             },
           ].map(faq => (
             <div key={faq.q} className="rounded-[14px] border border-border bg-snow p-5">

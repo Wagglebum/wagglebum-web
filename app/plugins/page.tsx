@@ -5,7 +5,7 @@ import content from '@/data/content.json';
 
 export const metadata = {
   title: 'Plugins',
-  description: 'Production-ready Unity and Unreal plugins from Wagglebum. Buy once, own it forever. No subscriptions.',
+  description: 'Production-ready Unity plugins from Wagglebum: WagSave (free), WagSave Pro and WagSettings. Buy once, own it forever. No subscriptions.',
 };
 
 export default function PluginsPage() {
@@ -62,7 +62,7 @@ export default function PluginsPage() {
                 }
               </div>
               <div className="flex flex-wrap gap-1.5">
-                {p.tags.map(t => <Tag key={t.label} tone={t.tone as 'neutral' | 'blush'}>{t.label}</Tag>)}
+                {p.tags.map(t => <Tag key={t.label} tone={t.tone as 'neutral' | 'blush' | 'ok'}>{t.label}</Tag>)}
               </div>
               <h3 className="text-[20px] font-extrabold">{p.title}</h3>
               <p className="flex-1 text-[14px] text-fg-muted">{p.body}</p>
